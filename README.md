@@ -1,6 +1,6 @@
 # charles.perin.github.io
 
-Website available at http://charlesperin.github.io
+Website available at http://charlesperin.net
 
 ## Getting started
 
