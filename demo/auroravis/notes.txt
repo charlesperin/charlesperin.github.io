@@ -1,2 +1,0 @@
-ftp://spdf.gsfc.nasa.gov/pub/data/omni/low_res_omni/omni2.text
-ftp://spdf.gsfc.nasa.gov/pub/data/omni/low_res_omni/omni_m_daily.dat
