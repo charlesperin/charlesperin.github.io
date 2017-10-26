@@ -1,0 +1,234 @@
+{% include header.html %}
+
+			<!-- Main -->
+				<div id="main-wrapper">
+				
+					<div class="container">
+					
+						<div class="row">
+							<div class="12u">
+								<!-- Intro -->
+									<section id="about-me">
+										<div class="row">
+											<div class="4u 12u(mobile)">
+												<section>
+													<div id="main-info">
+													<div id="first-name">{{site.data.aboutme.name.first}}</div>
+													<div id="last-name">{{site.data.aboutme.name.last}}</div>
+												</div>
+												</section>
+											</div>
+											<div class="6u 10u(mobile)">
+												<section>
+													<div id="position">
+														{{site.data.aboutme.job.position}}
+													</div>
+													<div id="affiliation">
+														{{site.data.aboutme.job.affiliation.details}}
+													</div>
+												</section>
+											</div>
+											<div class="2u 2u(mobile)">
+												<section>
+													<div id="affiliation-logo">
+														<a href="{{site.data.aboutme.job.affiliation.href}}" class="image featured"><img src="{{site.data.aboutme.job.affiliation.logo}}"/></a>
+													</div>
+												</section>
+											</div>
+										</div>
+									</section>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="12u">
+									<section>
+										<div class="row">
+											<div class="4u 12u(mobile)">
+												<section>
+													<a href="#" class="image featured"><img src="{{page.picture}}"/></a>
+													{% if page.social_display == 'horizontal' %}
+														{%include social-links-horizontal.html%}
+													{% endif %}
+												</section>
+											</div>
+											<div class="8u 12u(mobile)">
+												<section>
+												<header class="major">
+													<h2>About Me</h2>
+												</header>
+													{%include short-bio.html%}
+												<footer>
+													<ul class="actions">
+														<li><a href="/visual-cv" class="button alt">View more about me</a></li>
+													</ul>
+												</footer>
+												</section>
+											</div>
+										</div>
+									</section>
+							</div>
+						</div>
+						
+					</div>
+				
+					<div class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+							
+								<!-- News -->
+									<section>
+										<header class="major">
+											<h2>News</h2>
+										</header>
+										<div class="row">
+											<div class="12u">
+												
+												<ul class="news">
+													{% for post in site.categories['news']  limit:4 %}
+													<li>
+														<h3>
+															{{ post.date | date: "%b. %Y" }}
+														</h3>
+														<p>{{ post.text }}</p>
+													</li>
+													{% endfor %}
+												</ul>
+												
+												<footer>
+													<ul class="actions">
+														<li><a href="/news" class="button alt">View all news</a></li>
+													</ul>
+												</footer>
+												
+											</div>
+										</div>
+									</section>
+							</div>
+							
+
+							
+							<div class="4u 12u(mobile)">
+								<section class="box white twitter">
+							<a class="twitter-timeline" data-width="{{page.twitter_width}}" data-height="{{page.twitter_height}}" data-theme="light" data-link-color="#{{page.twitter_link_color}}" data-chrome="nofooter" href="https://twitter.com/charles_perin">Tweets by charles_perin</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+								</section>
+							</div>
+							
+							{% if page.social_display == 'vertical' %}
+							<div class="4u 12u(mobile)">
+								<section class="box white left-border">
+									{%include social-links-vertical.html%}
+								</section>
+							</div>
+							{% endif %}
+							
+							
+						</div>
+					
+					
+					
+						<div class="row">
+							<div class="12u">
+							
+								<!-- Project highlights -->
+									<section class="box white highlights">
+										<header class="major">
+											<h2>Project Highlights</h2>
+										</header>
+										
+										{% assign featured = site.categories['publications'] | where:'featured', true %}
+										
+										{% for pub in featured %}
+											{% assign loopindex = forloop.index | modulo: 3 %}
+											{% if loopindex == 1 %}
+												<div class="row">
+											{% endif %}
+											
+											
+											<div class="4u 12u(mobile)">
+												<section class="box white">
+													<a href="{{ pub.url | prepend: site.baseurl }}" class="image featured">
+														<div class="img-zoom-wrapper">
+															<img src="{{ pub.thumb | prepend: site.baseurl}}"/>
+														</div>
+													</a>
+														<header class="title">
+															<h3>{{pub.title_short}}</h3>
+														</header>
+														<p>{{pub.description_short}}</p>
+												</section>
+											</div>
+											
+											{% if loopindex == 0 or forloop.last %}
+												</div>
+											{% endif %}
+											
+										{% endfor %}
+									
+									<footer>
+										<ul class="actions">
+											<li><a href="/publications" class="button alt">View more projects</a></li>
+										</ul>
+									</footer>
+									
+									</section>
+								
+							</div>
+						</div>
+						
+						
+						<div class="row">
+							<div class="12u">
+
+								<!-- Blog -->
+									<section class="box white highlights">
+										<header class="major">
+											<h2>Latest Blog Posts</h2>
+										</header>
+										
+										{% assign featured = site.categories['blog'] | sort:'date' | reverse %}
+										
+										{% for blog in featured limit:2 %}
+											{% assign loopindex = forloop.index | modulo: 2 %}
+											{% if loopindex == 1 %}
+												<div class="row">
+											{% endif %}
+											
+											<div class="6u 12u(mobile)">
+												<section class="box white">
+													<a href="{{ blog.url | prepend: site.baseurl }}" class="image featured">
+														<div class="img-zoom-wrapper">
+															<img src="{{ blog.thumb | prepend: site.baseurl}}"/>
+														</div>
+													</a>
+													<header class="title">
+														<h3>{{blog.title}}</h3>
+													</header>
+													<p>{{blog.description_short}}</p>
+												</section>
+											</div>
+											
+											{% if loopindex == 0 or forloop.last %}
+												</div>
+											{% endif %}
+											
+										{% endfor %}
+										
+										<footer>
+											<ul class="actions">
+												<li><a href="/blog" class="button alt">View more blog posts</a></li>
+											</ul>
+										</footer>
+
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+		
+
+{% include footer.html %}

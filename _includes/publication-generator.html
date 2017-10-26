@@ -1,0 +1,176 @@
+<div class="thumbnail">
+	<a class="pull-left" 
+		{% if pub.project %} 
+		href="/projects/{{ pub.project }}"
+		{% else %}
+		href="{{pub.url | prepend: site.baseurl }}"
+		{% endif %}			
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="{{ pub.thumb }}">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			{% if _show_pub_id %}
+			<div class="pub-id">{{pub_id}}</div>
+			{% endif %}
+	
+			{% if _show_venue_name %}
+				{% if pub.journal_name %}
+					<div class="pub-type journal">{{pub.journal_name}}</div>
+				{% endif %}
+				
+				{% if pub.conference_name %}
+					<div class="pub-type conference">{{pub.conference_name}}</div>
+				{% endif %}
+				
+				{% if pub.workshop_name %}
+					<div class="pub-type workshop">{{pub.workshop_name}}</div>
+				{% endif %}
+				
+				{% if pub.poster_name %}
+					<div class="pub-type poster">{{pub.poster_name}}</div>
+				{% endif %}
+				
+				{% if pub.demo_name %}
+					<div class="pub-type demo">{{pub.demo_name}}</div>
+				{% endif %}
+				
+				{% if pub.contest_name %}
+					<div class="pub-type contest">{{pub.contest_name}}</div>
+				{% endif %}
+				
+				{% if pub.chapter_name %}
+					<div class="pub-type chapter">{{pub.chapter_name}}</div>
+				{% endif %}
+				
+				{% if pub.patent_name %}
+					<div class="pub-type patent">{{pub.patent_name}}</div>
+				{% endif %}
+				
+				{% if pub.thesis_name %}
+					<div class="pub-type thesis">{{pub.thesis_name}}</div>
+				{% endif %}
+			{% endif %}
+			
+			{% if _show_acceptance_rate %}
+				{% if pub.acceptance_rate%}
+					<div class="acceptance_rate">
+						AR: {{pub.acceptance_rate}}
+						{% if pub.submitted and pub.accepted%}
+							 ({{pub.accepted}} / {{pub.submitted}})
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+			
+			{% if _show_award %}
+				{% if pub.award %}
+					<div class="award">
+					{% if pub.award contains 'honorable'%}
+						<img class="icon-award" src="/images/icon/icon_award_honorable.png">
+					{% elsif pub.award contains 'best' %}
+					<img class="icon-award" src="/images/icon/icon_award_best.png">
+					{% else %}
+						<h3 style='color:red'>ERROR - unknown award {{pub.award}}<h3>
+					{% endif %}
+					<text>{{pub.award}}</text>
+					</div>
+				{% endif %}
+			{% endif %}
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		{% for a in pub.authors %}
+			{% assign author_first = "" %}
+			{% assign author_last = "" %}
+			{% for people in site.data.people %}
+				{% if people.alias == a %}
+					{% assign author_first = people.first %}
+					{% assign author_last = people.last %}
+				{% endif %}
+			{% endfor %}
+			
+			{% if author_first == "" or author_last == "" %}
+				<span style="color: red">MISSING AUTHOR: {{a}}</span>
+			{% else %}
+				{% if a == "perin" %}
+					<span class="author me">
+				{% else %}
+					<span class="author">
+				{% endif %}
+				{% if forloop.last %}
+					{{author_first}} {{author_last}}
+				{% else %}
+					{{author_first}} {{author_last}}, 
+				{% endif %}
+				</span>
+			{% endif %}
+		{% endfor %}
+	</span>
+	<span class="publication-title">{{ pub.title }}</span>
+	<span class="publication-proceedings">{{ pub.proceedings }}</span>
+		
+		<div class="icon publi">
+		
+			{% if pub.bibtex %}
+			<a href="{{ pub.bibtex }}" class="icon">
+				<img class="icon" src="{{ '/images/icon/icon_bib.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			{% if pub.code %}
+			<a href="{{ pub.code }}" class="icon">
+				<img class="icon" src="{{ '/images/icon/icon_code.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			{% if pub.data %}
+			<a href="{{ pub.data }}" class="icon">
+				<img class="icon" src="{{ '/images/icon/icon_data.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			{% if pub.demo %}
+			<a href="{{ pub.demo }}" class="icon">
+				<img class="icon" src="{{ '/images/icon/icon_demo.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			{% if pub.website %}
+			<a href="{{ pub.website }}" class="icon">
+				<img src="{{ '/images/icon/icon_website.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+								
+			{% if pub.video %}
+			<a href="{{ pub.video }}" class="icon">
+				<img class="icon" src="{{ '/images/icon/icon_movie_clap.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% elsif pub.video_preview %}
+			<a href="{{ pub.video_preview }}" class="icon">
+				<img class="icon" src="{{ '/images/icon/icon_movie_clap.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			{% if pub.poster %}
+			<a href="{{ pub.poster }}" class="icon">
+				<img src="{{ '/images/icon/icon_poster.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			{% if pub.pdf %}
+			<a href="{{ pub.pdf }}" class="icon">
+				<img src="{{ '/images/icon/icon_pdf.png' | prepend:site.baseurl }}"/>
+			</a>
+			{% endif %}
+			
+			
+		</div>
+	</div>
+</div>

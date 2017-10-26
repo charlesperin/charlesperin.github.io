@@ -1,0 +1,93 @@
+<ul id="pub-ul">
+{% assign sorted_pub = site.categories['workshop'] | sort: 'date' | reverse %}
+{% for pub in sorted_pub %}
+	
+	<li class="thumb-list {{currentyear}}">
+		<div class="thumbnail workshop">
+			<a class="pull-left" 
+				{% if pub.project %} 
+				href="/projects/{{ pub.project }}"
+				{% else %}
+				href="{{pub.url | prepend: site.baseurl }}"
+				{% endif %}
+				>
+				<div class="img-zoom-wrapper">
+					<img class="thumb-img" src="{{ pub.thumb }}">
+				</div>
+			</a>
+			
+			<div class="thumb-body">
+			
+			<span class="publication-authors">
+				{% for a in pub.authors %}
+					{% assign author_first = "" %}
+					{% assign author_last = "" %}
+					{% for people in site.data.people %}
+						{% if people.alias == a %}
+							{% assign author_first = people.first %}
+							{% assign author_last = people.last %}
+						{% endif %}
+					{% endfor %}
+					
+					{% if author_first == "" or author_last == "" %}
+						<span style="color: red">MISSING AUTHOR: {{a}}</span>
+					{% else %}
+						{% if a == "perin" %}
+							<span class="author me">
+						{% else %}
+							<span class="author">
+						{% endif %}
+						{% if forloop.last %}
+							{{author_first}} {{author_last}}
+						{% else %}
+							{{author_first}} {{author_last}}, 
+						{% endif %}
+						</span>
+					{% endif %}
+				{% endfor %}
+			</span>
+			
+							<div class="icon publi">
+				
+					{% if pub.bibtex %}
+					<a href="{{ pub.bibtex }}" class="icon">
+						<img class="icon" src="{{ '/images/icon/icon_bib.png' | prepend:site.baseurl }}"/>
+					</a>
+					{% endif %}
+					
+					{% if pub.website %}
+					<a href="{{ pub.website }}" class="icon">
+						<img src="{{ '/images/icon/icon_website.png' | prepend:site.baseurl }}"/>
+					</a>
+					{% endif %}
+										
+					{% if pub.video %}
+					<a href="{{ pub.video }}" class="icon">
+						<img class="icon" src="{{ '/images/icon/icon_movie_clap.png' | prepend:site.baseurl }}"/>
+					</a>
+					{% elsif pub.video_preview %}
+					<a href="{{ pub.video_preview }}" class="icon">
+						<img class="icon" src="{{ '/images/icon/icon_movie_clap.png' | prepend:site.baseurl }}"/>
+					</a>
+					{% endif %}
+					
+					{% if pub.pdf %}
+					<a href="{{ pub.pdf }}" class="icon">
+						<img src="{{ '/images/icon/icon_pdf.png' | prepend:site.baseurl }}"/>
+					</a>
+					{% endif %}
+					
+					
+				</div>
+			
+			<span class="publication-title">{{ pub.title }}</span>
+			<span class="publication-proceedings">{{ pub.venue }}</span>
+				
+
+			</div>
+		</div>
+	</li>
+
+{% endfor %}
+	
+</ul>

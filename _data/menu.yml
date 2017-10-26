@@ -1,0 +1,17 @@
+- label: HOME
+  page: index.html
+
+- label: PUBLICATIONS
+  page: publications
+
+- label: ACTIVITIES
+  page: research
+
+- label: TEACHING
+  page: teaching
+
+- label: CO-AUTHORS
+  page: co-authors
+
+- label: BLOG
+  page: blog

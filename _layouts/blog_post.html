@@ -1,0 +1,57 @@
+{% include header.html %}
+<!-- Main -->
+	<div class="main-wrapper">
+		<div class="container">
+		
+			<section id="blog-paginate-section-top">
+			{% include previous-next-blog-generator.html %}
+			</section>
+		
+			<article class="box post white">
+				<section>
+					<header>
+						<h2>{{page.title}}</h2>
+						<p style="margin-top: .5em">{{ page.subtitle }}</p>
+						<h5>Posted {{ page.date | date_to_string }}</h5>
+					</header>
+				</section>
+				<section>
+						{% if page.teaser_href %}
+							<a href="{{page.teaser_href}}"
+						{% else %}
+							<a href="#"
+						{% endif %}
+					 class="image"><img src="{{page.teaser | prepend:site.baseurl }}" /></a>
+					
+				</section>
+				
+				{% include content_obj-generator.html %}
+				
+				<section>
+					{{ page.content }}
+				</section>
+				
+				
+			</article>
+			
+			<section id="blog-paginate-section-bottom">
+				{% include previous-next-blog-generator.html %}
+				</section>
+			
+		</div>
+	</div>
+	
+
+
+	
+{% include footer.html %}
+
+<!-- Stuff for jsarr tag  -->
+
+{% for js in page.jsarr %}
+	<script type="text/javascript">
+		 {% include {{ js }} %}
+	</script>
+{% endfor %}
+
+<!-- End Stuff for jsarr tag  -->

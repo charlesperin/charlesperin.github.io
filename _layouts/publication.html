@@ -1,0 +1,119 @@
+{% include header.html %}
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			{% if page.teaser %}
+				<a href="/{{ page.teaser }}" class="image featured"><img src="{{ page.teaser }}"/></a>
+			{% endif %}
+			
+
+			
+			<header>
+				<h2>{{page.title}}</h2>
+				
+				<div class="row authors-grid">
+					<div class="12u">
+						{% assign authors_list = page.authors %}
+						{% include authors_list-generator.html %}
+					</div>
+				</div>
+				<p>{{ page.description }}</p>
+			</header>
+			
+			<div class="row">
+				<div class="4u 12u(mobile)">
+					<div id="icon-legend" class="icon-horizontal">
+						{% if page.pdf %}
+						<a href="{{ page.pdf }}" class="icon">
+							<img src="{{ '/images/icon/icon_pdf.png' | prepend:site.baseurl }}"/>
+							Download the document
+						</a>
+						{% endif %}
+						{% if page.poster %}
+						<a href="{{ page.poster }}" class="icon">
+							<img src="{{ '/images/icon/icon_poster.png' | prepend:site.baseurl }}"/>
+							Download the poster
+						</a>
+						{% endif %}
+						{% if page.bibtex %}
+						<a href="{{ page.bibtex }}" class="icon">
+							<img class="icon" src="{{ '/images/icon/icon_bib.png' | prepend:site.baseurl }}"/>
+							Download the bibtex
+						</a>
+						{% endif %}
+						{% if page.website %}
+						<a href="{{ page.website }}" class="icon">
+							<img src="{{ '/images/icon/icon_website.png' | prepend:site.baseurl }}"/>
+							Visit the project website
+						</a>
+						{% endif %}
+						{% if page.demo %}
+						<a href="{{ page.demo }}" class="icon">
+							<img class="icon" src="{{ '/images/icon/icon_demo.png' | prepend:site.baseurl }}"/>
+							Try the interactive demo
+						</a>
+						{% endif %}
+						{% if page.data %}
+						<a href="{{ page.data }}" class="icon">
+							<img class="icon" src="{{ '/images/icon/icon_data.png' | prepend:site.baseurl }}"/>
+							Get the study data
+						</a>
+						{% endif %}
+						{% if page.code %}
+						<a href="{{ page.code }}" class="icon">
+							<img class="icon" src="{{ '/images/icon/icon_code.png' | prepend:site.baseurl }}"/>
+							Get the source code
+						</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					{% if page.video %}
+					<h4>Watch the accompanying video</h4>
+					{% assign video_name = page.video %}
+					{% include embed-video.html %}
+					{% endif %}
+				</div>
+			</div>
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					{% if page.video_preview %}
+					<h4>Watch the 30 seconds video preview</h4>
+					{% assign video_name = page.video_preview %}
+					{% include embed-video.html %}
+					{% endif %}
+				</div>
+			</div>
+			
+			
+			
+			
+			{% include content_obj-generator.html %}
+			
+
+			<section>
+				{{ page.content }}
+			</section>
+			
+		</article>
+	</div>
+</div>	
+	
+{% include footer.html %}
+
+<!-- Stuff for jsarr tag  -->
+
+{% for js in page.jsarr %}
+	<script type="text/javascript">
+		 {% include {{ js }} %}
+	</script>
+{% endfor %}
+
+<!-- End Stuff for jsarr tag  -->

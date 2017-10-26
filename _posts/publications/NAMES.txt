@@ -1,0 +1,8 @@
+
+subjectivity
+
+bertifier-ihm [bertifier]
+
+<a href='publications/NAME'>LONG_NAME</a>
+<a href='projects/NAME'>LONG_NAME</a>
+

@@ -1,0 +1,98 @@
+{% include header.html %}
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white co-authors">
+			
+			<header>
+				<h2>{{page.title}}</h2>
+				<p>{{ page.subtitle }}</p>
+			</header>
+			
+			<p style="text-align: right">
+			Size indicates the number of co-authored work
+			</p>
+
+			
+			<div class="grid">
+				
+				<!-- first filter co-author so that it does not include me -->
+				<!-- and create an array that contains number of co-autorship -->
+				{% assign coauthors = "" | split: "" %}
+				{% assign people = site.data.people | sort: 'last' %}
+				{% for author in people %}
+					{% unless author.alias == 'perin' %}
+						{% assign _author = "" | split: "" %}
+						{% assign _author = _author | push: author %}
+						{% assign _publis = 0 %}
+						
+						<!-- look in publications -->
+						{% for pub in site.categories['publications'] %}
+							{% for a in pub.authors %}
+								{% if a == author.alias %}
+									{% assign _publis = _publis | plus: 1 %}
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+						
+						<!-- look in workshops -->
+						{% for pub in site.categories['workshop'] %}
+							{% for a in pub.authors %}
+								{% if a == author.alias %}
+									{% assign _publis = _publis | plus: 1 %}
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+						
+						{% assign _author = _author | push: _publis %}
+						{% assign coauthors = coauthors | push: _author %}
+					{% endunless %}
+				{% endfor %}
+			
+				<!-- then lay out the co-authors -->
+				{% for author in coauthors %}
+					{% if author[1] < 1 %}
+						{% continue %}
+					{% endif %}
+					
+					{% capture author_pic %}/images/people/{{author[0].alias | downcase}}.jpg{% endcapture %}
+					
+					{% assign size = author[1] | times: 2 %}
+					{% assign size = size | plus: 8 %}
+					{% if size > 32 %}
+						{% assign size = 32 %}
+					{% endif %}
+					
+					<div class="grid-item" style="width: {{size}}%">
+						<a href="{{author[0].url}}">
+							<div class="img-zoom-wrapper" style="width: 100%">
+								<img src="{{ author_pic }}" style="width: 100%"/>
+							</div>
+							<p>{{author[0].first}} {{author[0].last}}</p>
+						</a>
+					</div>
+					
+
+				
+					
+				{% endfor %}
+			</div>
+		
+		</article>
+	</div>
+</div>	
+	
+{% include footer.html %}
+
+<!-- Stuff for jsarr tag  -->
+
+{% for js in page.jsarr %}
+	<script type="text/javascript">
+		 {% include {{ js }} %}
+	</script>
+{% endfor %}
+
+<!-- End Stuff for jsarr tag  -->

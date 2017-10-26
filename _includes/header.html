@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="{{ page.description }}" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{{ '/assets/js/jquery.min.js' | prepend:site.baseurl }}"></script>
+		<script src="{{ '/assets/js/jquery.dropotron.min.js' | prepend:site.baseurl }}"></script>
+		<script src="{{ '/assets/js/skel.min.js' | prepend:site.baseurl }}"></script>
+		<script src="{{ '/assets/js/skel-viewport.min.js' | prepend:site.baseurl }}"></script>
+		<script src="{{ '/assets/js/util.js' | prepend:site.baseurl }}"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="{{ '/assets/js/main.js' | prepend:site.baseurl }}"></script>
+		<script src="{{ '/assets/js/d3-4.10.2.min.js' | prepend:site.baseurl }}"></script>
+		
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend:site.baseurl }}"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | prepend:site.baseurl }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon/favicon-32x32.png' | prepend:site.baseurl }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon/favicon-16x16.png' | prepend:site.baseurl }}">
+		<link rel="manifest" href="{{ '/images/favicon/manifest.json' | prepend:site.baseurl }}">
+		<link rel="mask-icon" href="{{ '/images/favicon/safari-pinned-tab.svg' | prepend:site.baseurl }}" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					{% assign current = page.url | downcase | split: '/' %}
+					
+					{% for item in site.data.menu %}
+						<li 
+						{% if current[1] == {{item.page}} %}
+							class="current"
+						{% endif %}
+						>
+						<a href="/{{item.page | prepend:site.baseurl }}">{{item.label}}</a>
+						</li>
+					{% endfor %}
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>

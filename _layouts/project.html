@@ -1,0 +1,107 @@
+{% include header.html %}
+
+{% assign sorted_pub = site.categories['publications'] | sort: 'date' | reverse %}
+{% assign authors_list = "" | split: "," %}
+{% assign videos_list = "" %}
+
+{% for pub in sorted_pub %}
+	{% if pub.project == page.project_name %}
+		{% assign authors_list = authors_list | concat: pub.authors %}
+		{% if pub.video %}
+			{% assign videos_list = videos_list | append: pub.video | append: "," %}
+		{% endif %}
+		{% if pub.video_preview %}
+			{% assign videos_list = videos_list | append: pub.video_preview | append: "," %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+			<a href="/{{ page.teaser }}" class="image featured"><img src="{{ page.teaser }}"/></a>
+			
+			
+			<header style="margin-bottom: 9em;">
+				<h2>{{page.title}}</h2>
+				
+			<div class="row authors-grid">
+				<div class="12u">
+					{% include authors_list-generator.html %}
+				</div>
+			</div>
+				
+				<p>{{ page.description }}</p>
+			</header>
+			
+			
+			
+			{% assign videos_list = videos_list | split: "," %}
+			{% assign videos_list = videos_list | uniq %}
+			{% assign nb_videos = videos_list | size %}
+			
+			{% include content_obj-generator.html %}
+			
+			<section>
+				{{ page.content }}
+			</section>
+			
+			
+			<section>
+				{% if nb_videos > 0 %}
+					{% if nb_videos > 1 %}
+						<h3>Videos</h3>
+					{% else %}
+						<h3>Video</h3>
+					{% endif %}
+				{% endif %}
+				
+				{% for video_name in videos_list %}
+					{% include embed-video.html %}
+				{% endfor %}
+			</section>
+			
+			
+			
+			
+			<section>
+				<h3>Project Publications</h3>
+				{% assign _show_pub_id = false %}
+				{% assign _show_venue_name = true %}
+				{% assign _show_acceptance_rate = false %}
+				{% assign _show_award = false %}
+				
+				{% assign sorted_pub = site.categories['publications'] | sort: 'date' | reverse %}
+				<ul id="pub-ul">
+				{% for pub in sorted_pub %}
+					{% if pub.project == page.project_name %}
+					<li class="thumb-list {{currentyear}}">
+						{% include publication-generator.html %}
+					</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+			</section>
+		</article>
+	</div>
+</div>
+	
+	
+	
+	
+	
+{% include footer.html %}
+
+<!-- Stuff for jsarr tag  -->
+
+{% for js in page.jsarr %}
+	<script type="text/javascript">
+		 {% include {{ js }} %}
+	</script>
+{% endfor %}
+
+<!-- End Stuff for jsarr tag  -->

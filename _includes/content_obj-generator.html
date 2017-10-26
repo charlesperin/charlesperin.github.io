@@ -1,0 +1,36 @@
+			{% if page.content_obj %}
+				<section>
+					{% for row in page.content_obj %}
+						<div class="row">
+							{% for col in row %}
+								<div class="{{col.width}}u 12u(mobile)">
+									<section>
+										{% for content in col.content %}
+											{% assign loopcolindex = forloop.index %}
+											{% if content.type == 'h3' %}
+												<header class="text-{{content.align}}">
+													<h3>{{content.text}}</h3>
+												</header>
+											{% elsif content.type == 'p' %}
+												<p class="text-{{content.align}}">{{content.text}}</p>
+											{% elsif content.type == 'img' %}
+												{% if content.href and content.src%}
+												<a href="{{content.href}}" class="image"><img src="{{content.src}}"/></a>
+												{% elsif content.href %}
+												<a href="{{content.href}}" class="image"><img src="{{content.href}}"/></a>
+												{% elsif content.src %}
+												<a href="{{content.src}}" class="image"><img src="{{content.src}}"/></a>
+												{% else %}
+												<p style="color: red">ERROR LOADING IMAGE - Need either src or href field</p>
+												{% endif %}
+											{% else %}
+												<p style="color: red">ERROR LOADING CONTENT - Check types in template publication.html</p>
+											{% endif %}
+										{% endfor %}
+									</section>
+								</div>
+							{% endfor %}
+						</div>
+					{% endfor %}
+				</section>
+			{% endif %}

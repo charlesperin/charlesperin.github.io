@@ -1,0 +1,102 @@
+
+<!-- input: 
+_list_subtitle the subtitle (h4) if exists, else nil
+_list_class the class of the list
+_data is the data file name
+_field_role is true if add the role field from data file
+_venue_type can be nil (any type, o not check the field), or a type the object must have
+_compact if years listed for each venue, ordered alphabetically. Otherwise, one line for each year, ordered by date.
+ -->
+ 
+{% assign current_year = 'now' | date: "%Y" | plus: 1 %}
+ 
+{% if _list_subtitle %}
+<h4 class="list-subtitle">{{_list_subtitle}}</h4>
+{% endif %}
+
+{% assign _items = site.data[{{_data}}] %}
+
+<!-- if compact list -->
+{% if _compact %}
+	<ul class="list {{_list_class}}">
+	{% assign _items = _items | sort : 'venue' %}
+	{% for item in _items %}
+		{% assign venue = '' %}
+		<!-- check the venue exists -->
+		{% for v in site.data.venues %}
+			{% if v.alias == item.venue %}
+				{% assign venue = v %}
+			{% endif %}
+		{% endfor %}
+		{% if venue == '' %}
+			<span style="color: red">Missing venue: {{item}}</span>
+		{% endif %}
+		
+		<!-- if filter by venue type, skip venues of wrong type -->
+		{% if _venue_type and _venue_type != venue.type %}
+			{% continue %}
+		{% endif %}
+		
+		<!-- here, either good venue or show all venues -->
+		{% assign years = "" | split: "" %}
+		{% for i in (2010..current_year) %}
+			{% assign i_s = i | append: '' %}
+			{% assign value = item[i_s] %}
+			{% if value != nil %}
+				{% assign yearArray = "" | split: "" %}
+				{% assign yearArray = yearArray | push: i %}
+				{% assign yearArray = yearArray | push: value %}
+				{% assign years = years | push: yearArray %}
+			{% endif %}
+		{% endfor %}
+		
+		{% assign nbYears = years | size %}
+		{% if nbYears > 0 %}
+			<li>
+				<span class="venue_name">{{ venue.short_name }}</span>{% if _field_role and item.role %}: {{item.role}} {% endif %}{% for year in years %}{% if forloop.first %} - {% endif %}{{year[0]}}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}
+			</li>
+		{% endif %}
+		
+
+	{% endfor %}
+</ul>
+
+<!-- if extended list -->
+{% else %}
+	<ul class="list {{_list_class}}">	
+		{% assign _items = _items | sort : 'venue' %}
+		{% for item in _items %}
+			{% assign venue = '' %}
+			<!-- check the venue exists -->
+			{% for v in site.data.venues %}
+				{% if v.alias == item.venue %}
+					{% assign venue = v %}
+				{% endif %}
+			{% endfor %}
+			{% if venue == '' %}
+				<span style="color: red">Missing venue: {{item}}</span>
+			{% endif %}
+			
+			<!-- if filter by venue type, skip venues of wrong type -->
+			{% if _venue_type and _venue_type != venue.type %}
+				{% continue %}
+			{% endif %}
+			
+			<!-- here, either good venue or show all venues -->
+			{% for i in (2010..current_year) reversed %}
+				{% assign i_s = i | append: '' %}
+				{% assign value = item[i_s] %}
+				{% if value != nil %}
+					{% assign yearArray = "" | split: "" %}
+					{% assign yearArray = yearArray | push: venue.short_name %}
+					<li>
+						<span class="venue_name">{{ venue.short_name }}</span>{% if _field_role and item.role %}: {{item.role}} {% endif %} - {{i}}
+					</li>
+				{% endif %}
+			{% endfor %}
+			
+
+		{% endfor %}
+	</ul>
+{% endif %}
+ 

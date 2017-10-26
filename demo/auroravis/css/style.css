@@ -1,0 +1,418 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #222;
+	overflow: hidden;
+	transition: all 1.5s;
+}
+
+body, button {
+	font: 14px/1.5 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #fff;
+}
+
+h2 {
+	font-size: 48px;
+	font-weight: 200;
+	margin: 80px 0 20px 0;
+}
+
+h3 {
+	font-size: 28px;
+	font-weight: 200;
+	margin: 40px 0 10px 0;
+}
+
+/* nights */
+
+.nights {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 200;
+}
+
+#background {
+	position: absolute;
+	right: 0;
+	top: -100%;
+	left: 0;
+	z-index: -1;
+	background-image: url(../interface/scale.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	background-size: 100% 100%;
+	opacity: 0.05;
+	transition: all 1.5s;
+}
+
+.nights div, .nights span, .buttons, .detailbuttons, #scale {
+	position: absolute;
+	transition: all 1.5s, width 1s, left 1s, transform 2.5s;
+	transform: rotate(0deg);
+	opacity: 1;
+	top: -100%;
+}
+
+.nights div {
+	cursor: pointer;
+}
+
+.nights div.selected {
+	cursor: default;
+}
+
+.nights div, #scale {
+	background-size: cover;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+}
+
+.nights .hover {
+	transform: rotate(90deg);
+}
+
+.noimages div {
+	background-image: none !important;
+}
+
+.detail .nights .selected {
+	opacity: 1;
+	transform: rotate(90deg);
+	z-index: 250;
+	transition: all 1s, transform 0.5s;
+}
+
+.nolabel .nights span {
+	opacity: 0;
+}
+
+.nights span {
+	text-transform: uppercase;
+	border-left: 2px solid;
+	padding-left: 10px;
+	cursor: default;
+}
+
+/* video */
+
+video {
+	position: absolute;
+	transition: all 1.5s;
+	opacity: 0;
+	background: #000;
+	z-index: 100;
+	padding: 20px 0;
+}
+
+.detail video {
+	z-index: 500;
+}
+
+.detail video.loaded {
+	opacity: 1;
+}
+
+.video .marker {
+	position: absolute;
+	opacity: 0;
+	width: 5px;
+	background: #fff;
+	z-index: -50;
+	transition: opacity 2.5s, left 0.2s;
+	border-radius: 2px;
+	pointer-events: none;
+}
+
+.detail .video .marker {
+	opacity: 1;
+	z-index: 500;
+}
+
+/* moons */
+
+.moon1:after, .moon2:after, .moon3:after, .moon4:after {
+	content: '';
+	position: absolute;
+	bottom: -40px;
+	margin-left: -25%;
+	display: block;
+	width: 150%;
+	height: 30px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 1;
+	transition: all 1.5s;
+}
+
+.moon1:after {
+	background-image: url(../interface/moon1.svg);
+}
+
+.moon2:after {
+	background-image: url(../interface/moon2.svg);
+}
+
+.moon3:after {
+	background-image: url(../interface/moon3.svg);
+}
+
+.moon4:after {
+	background-image: url(../interface/moon4.svg);
+}
+
+/*.detail .moon1:after, .detail .moon2:after, .detail .moon3:after, .detail .moon4:after {
+	opacity: 0;
+}*/
+
+.selected.moon1:after, .selected.moon2:after, .selected.moon3:after, .selected.moon4:after {
+	opacity: 0;
+}
+
+/* interface */
+
+.sidebar, #meta {
+	transition: all 1.5s;
+	position: absolute;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.sidebar {
+	opacity: 0;
+}
+
+.sidebar button {
+	display: block;
+	margin: 10px auto;
+	background: #fff;
+	color: #111;
+}
+
+.sidebar button:hover {
+	background: #888;
+}
+
+.detail .sidebar {
+	opacity: 0;
+	z-index: 200;
+}
+
+#date {
+	margin-top: 50px;
+}
+
+#date span {
+	display: block;
+	font-size: 28px;
+	line-height: 1.2;
+}
+
+#date span:first-child {
+	font-size: 54px;
+	line-height: 1;
+}
+
+#date span:last-child {
+	font-size: 24px;
+}
+
+#meta {
+	opacity: 1;
+	top: -100%;
+	right: 0;
+	left: 0;
+	z-index: 100;
+}
+
+#meta span {
+	margin: 0 -10px !important;
+	padding: 11px 20px !important;
+}
+
+#cursor {
+	width: 32px;
+	height: 32px;
+	background-image: url(../interface/handicon-filled.png) !important;
+	background-size: contain;
+	transition: all 0.2s;
+	position: absolute;
+	margin-left: -16px;
+	z-index: 1000;
+	opacity: 0.5;
+}
+
+.active#cursor, .overlay1 .upper#cursor, .overlay2 .upper#cursor, .overlay3 .upper#cursor {
+	opacity: 1 !important;
+}
+
+.nokinect #cursor, .overlay1 #cursor, .overlay2 #cursor, .overlay3 #cursor {
+	opacity: 0 !important;
+}
+
+.detail #cursor {
+	margin-top: -40px;
+}
+
+.detail .upper#cursor {
+	margin-top: 0px;
+}
+
+#scale {
+	background-image: url(../interface/scale.png);
+	transition: all 1.5s, width 1s, left 1s, transform 2.5s, opacity 0.5s;
+	z-index: 600;
+}
+
+.detail #scale, .detail #background {
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+/* buttons */
+
+.buttons, .detailbuttons {
+	top: -100%;
+	right: 20px;
+	left: 20px;
+	z-index: 600;
+}
+
+.buttons button, .detailbuttons button {
+	min-width: 150px;
+}
+
+.buttons div, .detailbuttons div {
+	display: inline-block;
+}
+
+.buttons div:first-child, .detailbuttons div:first-child {
+	float: left;
+}
+
+.buttons div:last-child, .detailbuttons div:last-child {
+	float: right;
+}
+
+.overlaybuttons {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+}
+
+.detail .buttons, .overlaybuttons, .overlay1 .buttons div:first-child, .overlay2 .buttons div:first-child, .overlay3 .buttons div:first-child, .detailbuttons, .overlay1 #scale, .overlay2 #scale, .overlay3 #scale {
+	opacity: 0;
+}
+
+.detail .detailbuttons, .overlay1 .overlaybuttons, .overlay2 .overlaybuttons, .overlay3 .overlaybuttons {
+	opacity: 1;
+	z-index: 700;
+}
+
+button, #meta span {
+	background: #111;
+	border: 2px solid #111;
+	border-radius: 10px;
+	padding: 10px 20px;
+	transition: all 0.5s;
+}
+
+button {
+	margin: 0 5px;
+	min-width: 150px;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: background-position 0s;
+	background: linear-gradient(to right, #fff 50%, #111 50%);
+	background-size: 200% 100%;
+	background-position: right bottom;
+}
+
+button:hover {
+	background: #333;
+	transition: all 0.5s;
+}
+
+button.hover {
+	transition: background-position 1.5s linear;
+	background-position: left bottom;
+}
+
+button:focus {
+	outline: none;
+}
+
+button.active {
+	border: 2px solid;
+}
+
+#images {
+	margin-right: 50px;
+}
+
+/* overlay */
+
+.overlay {
+	opacity: 0;
+	position: absolute;
+	z-index: -50;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	padding: 100px 20%;
+	background: #333;
+	transition: all 0.5s;
+}
+
+.overlay p, .overlay h3 {
+	width: 45%;
+	clear: left;
+}
+
+.overlay img, .overlay .links {
+	width: 45%;
+	float: right;
+	clear: right;
+	margin: 150px 0 50px 0;
+}
+
+.overlay p img {
+	float: left;
+	clear: left;
+	margin: 0;
+}
+
+.overlay .links {
+	margin: 10px 0;
+}
+
+.overlay1 .overlay1, .overlay2 .overlay2, .overlay3 .overlay3 {
+	opacity: 1;
+	z-index: 500;
+}
+
+/* misc */
+
+a {
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 2px solid;
+}
+
+a:hover {
+	border: none;
+}
