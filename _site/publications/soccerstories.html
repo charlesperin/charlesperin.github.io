@@ -1,0 +1,704 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>SoccerStories: A Kick-off for Visual Soccer Analysis</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="SoccerStories is a visualization interface to support analysts in exploring soccer data and communicating interesting insights. Currently, most analyses on such data relate to statistics on individual players or teams. However, soccer analysts we collaborated with consider that quantitative analysis alone does not convey the right picture of the game, as context, player positions and phases of player actions are the most relevant aspects. We designed SoccerStories to support the current practice of soccer analysts and to enrich it, both in the analysis and communication stages. Our system provides an overview+detail interface of game phases, and their aggregation into a series of connected visualizations, each visualization being tailored for actions such as a series of passes or a goal attempt. To evaluate our tool, we ran two qualitative user studies on recent games using SoccerStories with data from one of the world's leading live sports data providers. The first study resulted in a series of four articles on soccer tactics, by a tactics analyst, who said he would not have been able to write these otherwise. The second study consisted in an exploratory follow-up to investigate design alternatives for embedding soccer phases into word-sized graphics. For both experiments, we received a very enthusiastic feedback and participants consider further use of SoccerStories to enhance their current workflow." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+							class="current"
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/co-authors">CO-AUTHORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+				<a href="//images/publis/2013_VIS_soccerstories-teaser.png" class="image featured"><img src="/images/publis/2013_VIS_soccerstories-teaser.png"/></a>
+			
+			
+
+			
+			<header>
+				<h2>SoccerStories: A Kick-off for Visual Soccer Analysis</h2>
+				
+				<div class="row authors-grid">
+					<div class="12u">
+						
+						<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://charlesperin.net" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://romain.vuillemot.net/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/vuillemot.jpg"/>
+				</div>
+				<p>
+					Romain<br/>
+					Vuillemot
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://www.aviz.fr/~fekete/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/fekete.jpg"/>
+				</div>
+				<p>
+					Jean-Daniel<br/>
+					Fekete
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+					</div>
+				</div>
+				<p>SoccerStories is a visualization interface to support analysts in exploring soccer data and communicating interesting insights. Currently, most analyses on such data relate to statistics on individual players or teams. However, soccer analysts we collaborated with consider that quantitative analysis alone does not convey the right picture of the game, as context, player positions and phases of player actions are the most relevant aspects. We designed SoccerStories to support the current practice of soccer analysts and to enrich it, both in the analysis and communication stages. Our system provides an overview+detail interface of game phases, and their aggregation into a series of connected visualizations, each visualization being tailored for actions such as a series of passes or a goal attempt. To evaluate our tool, we ran two qualitative user studies on recent games using SoccerStories with data from one of the world's leading live sports data providers. The first study resulted in a series of four articles on soccer tactics, by a tactics analyst, who said he would not have been able to write these otherwise. The second study consisted in an exploratory follow-up to investigate design alternatives for embedding soccer phases into word-sized graphics. For both experiments, we received a very enthusiastic feedback and participants consider further use of SoccerStories to enhance their current workflow.</p>
+			</header>
+			
+			<div class="row">
+				<div class="4u 12u(mobile)">
+					<div id="icon-legend" class="icon-horizontal">
+						
+						<a href="https://hal.archives-ouvertes.fr/hal-00846718/document" class="icon">
+							<img src="/images/icon/icon_pdf.png"/>
+							Download the document
+						</a>
+						
+						
+						
+						<a href="/publis/2013_VIS_soccerstories.bib" class="icon">
+							<img class="icon" src="/images/icon/icon_bib.png"/>
+							Download the bibtex
+						</a>
+						
+						
+						<a href="http://www.aviz.fr/soccer" class="icon">
+							<img src="/images/icon/icon_website.png"/>
+							Visit the project website
+						</a>
+						
+						
+						<a href="http://charles.perin.free.fr/soccerstories/" class="icon">
+							<img class="icon" src="/images/icon/icon_demo.png"/>
+							Try the interactive demo
+						</a>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					
+					<h4>Watch the accompanying video</h4>
+					
+					
+<!-- input: 
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://www.youtube.com/embed/eFIorHSMiSQ" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+
+
+
+
+
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					
+					<h4>Watch the 30 seconds video preview</h4>
+					
+					
+<!-- input: 
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://player.vimeo.com/video/74415805?title=0&byline=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+
+
+
+
+
+					
+				</div>
+			</div>
+			
+			
+			
+			
+						
+				<section>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>High-resolution screenshots</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-left">Click on the images to download the high-resolution png versions.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="8u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-interface2.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-interface2.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Interface</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="2u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-right">
+													<h3>Phases small multiples variations</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+								<div class="10u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-small_multiples.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-small_multiples.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="3u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-right">
+													<h3>Faceted views of a shot on goal</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-right">From left to right: default view; with brushing; with "spray" mode</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="3u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-shots_default.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-shots_default.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="3u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-shots_brushing.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-shots_brushing.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="3u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-shots_spray.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-shots_spray.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-crossover.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-crossover.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-center">
+													<h3>Faceted views of crossover/corner kicks and long runs</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-left">< Crossover</p>
+											
+										
+											
+											
+												<p class="text-right">Long run ></p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-long_run.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-long_run.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="8u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-phase1_default.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-phase1_default.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>A series of passes in a phase represented using different faceted views</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-left">< Original phase</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-zoom_passes.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-zoom_passes.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<p class="text-left">< Original group of passes</p>
+											
+										
+											
+											
+												<p class="text-right">Using a complete node-link ></p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-node_link_all.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-node_link_all.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-node_link_filtered.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-node_link_filtered.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<p class="text-left">< Using a filtered node-link</p>
+											
+										
+											
+											
+												<p class="text-right">Using a hiveplot ></p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-hiveplot.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-hiveplot.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-matrix.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-matrix.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<p class="text-left">< Using an adjacency matrix</p>
+											
+										
+											
+											
+												<p class="text-right">Using a tag cloud ></p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/publis/2013_VIS_soccerstories-ss-tagcloud.png" class="image"><img src="/images/publis/2013_VIS_soccerstories-ss-tagcloud.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+				</section>
+			
+			
+
+			<section>
+				
+
+			</section>
+			
+		</article>
+	</div>
+</div>	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Oct. 26, 2017
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->
