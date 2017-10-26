@@ -1,0 +1,852 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Gap Chart</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Gap Charts are a novel class of line charts designed for visualizing the evolution of rankings over time, with a particular focus on sports data. Gap Charts show entries, e. g., teams participating in a competition, that are ranked over time according to a performance metric like a growing number of points or a score. The main advantages of Gap Charts are that 1) tied entries never overlap—only changes in rank generate limited overlap between time-steps; and 2) gaps between entries show the magnitude of their score difference. We evaluate the effectiveness of Gap Charts for performing different types of tasks, and find that they outperform standard time-dependent ranking visualizations for tasks that involve identifying and understanding evolutions in both ranks and scores. Finally, we show that Gap Charts are a generic and scalable class of line charts by applying them to a variety of different datasets." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/co-authors">CO-AUTHORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+			<a href="//images/projects/gapchart-teaser.png" class="image featured"><img src="/images/projects/gapchart-teaser.png"/></a>
+			
+			
+			<header style="margin-bottom: 9em;">
+				<h2>Gap Chart</h2>
+				
+			<div class="row authors-grid">
+				<div class="12u">
+					<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://charlesperin.net" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://jyby.eu/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/boy.jpg"/>
+				</div>
+				<p>
+					Jeremy<br/>
+					Boy
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://perso.limsi.fr/vernier/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/vernier.jpg"/>
+				</div>
+				<p>
+					Frédéric<br/>
+					Vernier
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+				</div>
+			</div>
+				
+				<p>Gap Charts are a novel class of line charts designed for visualizing the evolution of rankings over time, with a particular focus on sports data. Gap Charts show entries, e. g., teams participating in a competition, that are ranked over time according to a performance metric like a growing number of points or a score. The main advantages of Gap Charts are that 1) tied entries never overlap—only changes in rank generate limited overlap between time-steps; and 2) gaps between entries show the magnitude of their score difference. We evaluate the effectiveness of Gap Charts for performing different types of tasks, and find that they outperform standard time-dependent ranking visualizations for tasks that involve identifying and understanding evolutions in both ranks and scores. Finally, we show that Gap Charts are a generic and scalable class of line charts by applying them to a variety of different datasets.</p>
+			</header>
+			
+			
+			
+			
+			
+			
+			
+						
+				<section>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/publis/2014_VIS_gapchart-tdf-poster.pdf" class="image"><img src="/images/projects/gapchart-tdf.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Le Tour de France at a Glance</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-left">Temporal evolution of "Le Tour de France 2014" cyclists ranking after each stage. In contrast to standard snapshot ranking tables used to represent this ranking, our visualization clearly shows the temporal evolution of each cyclist’s ranking and global trends for each stage.</p>
+											
+										
+											
+											
+												<p class="text-left">The image shows the evolution of 198 cyclists' rankings after each of the 21 stages of the Tour de France. The magnitude landmarks (thin gray lines) represent 1 minute gaps between cyclists. Colors encode cyclists’ nationality, and stage miniatures provide context at the top. The chart clearly shows that many changes occurred in the rankings during the second stage of the race, which means this stage was key. After that, rankings remained stable for three stages, before changing dramatically once again. Tour de France enthusiasts will also see that 'flat terrain stages' generally do not impact rankings or gap magnitudes, whereas 'mountain stages' strongly impact both.</p>
+											
+										
+											
+											
+												<p class="text-left">The expert eye will see that Valverde lost his second position three stages before the end of the race, and that Porte constantly decreased in ranking during high mountain stages, while he was ranked second.</p>
+											
+										
+											
+											
+												<p class="text-left">< Click on the image to download the high-resolution pdf.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="5u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-right">
+													<h3>ARWU top 100 University Rankings between 2003 and 2013</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-right">Evolution of the top 100 universities' rankings over 10 years, according to the ARWU Shanghai University Ranking, using a Gap Chart. Colors encode world regions (North America in purple, Europe in orange, Asia in green, and unclassified in dark gray). The most immediate observation is that the entry ranked first (Harvard University) is far above all others. Below that, several universities struggle for the top-5 ranks, while competition is fierce at the bottom of the ranking. Nearly half the top-100 universities are North American; only five European and two Asian universities are among the first third. It is also interesting to point out that rankings varied a lot between 2003 and 2005. This was simply due to modifications of the ranking formula.</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/gapchart-arwu.png" class="image"><img src="/images/projects/gapchart-arwu.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+				</section>
+			
+			
+			<section>
+				
+
+			</section>
+			
+			
+			<section>
+				
+					
+						<h3>Video</h3>
+					
+				
+				
+				
+					
+<!-- input: 
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://player.vimeo.com/video/230841502?title=0&byline=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+
+
+
+
+
+				
+			</section>
+			
+			
+			
+			
+			<section>
+				<h3>Project Publications</h3>
+				
+				
+				
+				
+				
+				
+				<ul id="pub-ul">
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/gapchart"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2016_CGA_gapchart-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+					<div class="pub-type journal">CG&A</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jeremy Boy, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Frédéric Vernier
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Using Gap Charts to Visualize the Temporal Evolution of Ranks and Scores</span>
+	<span class="publication-proceedings">IEEE Computer Graphics and Applications, Special issue on Sports Visualization. IEEE</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2016_CGA_gapchart.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			<a href="http://vernier.frederic.free.fr/Infovis/gapChart/" class="icon">
+				<img class="icon" src="/images/icon/icon_demo.png"/>
+			</a>
+			
+			
+			
+			<a href="WEBSITE_URL" class="icon">
+				<img src="/images/icon/icon_website.png"/>
+			</a>
+			
+								
+			
+			<a href="https://vimeo.com/230841502" class="icon">
+				<img class="icon" src="/images/icon/icon_movie_clap.png"/>
+			</a>
+			
+			
+			
+			
+			
+			<a href="https://hal.inria.fr/hal-01435503/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/gapchart"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2014_VIS_gapchart-tdf-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type contest">VPG contest 2014</div>
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jeremy Boy, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Frédéric Vernier
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Le Tour de France 2014 at a Glance</span>
+	<span class="publication-proceedings">IEEE VGTC International Data-Visualization Contest, VIS 2014, Paris, France</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2014_VIS_gapchart-tdf.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			<a href="https://hal.archives-ouvertes.fr/hal-01138895/file/VIS_2014_vpg_contest_TDF-poster.pdf" class="icon">
+				<img src="/images/icon/icon_poster.png"/>
+			</a>
+			
+			
+			
+			<a href="https://hal.archives-ouvertes.fr/hal-01138895/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/gapchart"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2013_VIS_r2s2-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+					<div class="pub-type workshop">What's the score? 2013</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Frédéric Vernier
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">R2S2: A Hybrid Technique to Visualize Sport Ranking Evolution</span>
+	<span class="publication-proceedings">Proceedings of the IEEE VIS 2013 workshop: What's the score? The 1st Workshop on Sports Data Visualization, Atlanta, GA, USA</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2013_VIS_r2s2.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			<a href="https://hal.archives-ouvertes.fr/hal-00869346/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</ul>
+			</section>
+		</article>
+	</div>
+</div>
+	
+	
+	
+	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Oct. 26, 2017
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->

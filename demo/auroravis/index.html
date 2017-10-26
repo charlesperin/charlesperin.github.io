@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slicing the Aurora</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" href="favicon.png">
+	<link rel="shortcut icon" href="favicon.png">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="data/nights.json"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/kinect.js"></script>
+	<script src="js/script-online-version.js"></script>
+</head>
+<body class="nokinect">
+	<div id="meta"></div>
+	<div id="cursor"></div>
+	<div id="background"></div>
+	<div id="scale"></div>
+
+	<section class="nights">
+		<span id="dec">December '15</span>
+		<span id="jan">January '16</span>
+		<span id="feb">February '16</span>
+		<span id="mar">March '16</span>
+		<span id="apr">April '16</span>
+	</section>
+
+	<section class="sidebar left">
+		<div id="date"></div>
+	</section>
+
+	<section class="detailbuttons">
+		<div>
+			<button id="back">⬅ back</button>
+		</div>
+		<div>
+			<button id="playpause">play / pause</button>
+			<!--<button id="videosnap">save snapshot</button>
+			<button id="savekeogram">save keogram</button>-->
+		</div>
+	</section>
+
+	<section class="video">
+		<video src="" autoplay="true" loop="true"></video>
+		<div class="marker"></div>
+	</section>
+
+	<section class="buttons">
+		<!--<button id="images" class="active">images</button>-->
+		<div>
+			<span>sort by: </span>
+			<button class="sort active" id="data-date">date</button>
+			<button class="sort" id="data-height">length</button>
+			<button class="sort" id="data-v">brightness</button>
+		</div>
+		<div class="overlaybuttons">
+			<button class="back">⬅ back</button>
+		</div>
+		<div>
+			<span>information: </span>
+			<button class="help" id="help1" value="overlay1">keograms</button>
+			<button class="help" id="help2" value="overlay2">yellowknife</button>
+			<button class="help" id="help3" value="overlay3">auroramax</button>
+		</div>
+	</section>
+
+	<section class="overlay overlay1">
+		<img src="interface/explanation.png" alt="Explanation">
+		<h2>What is a Keogram?</h2>
+		<p>The word Keogram is derived from ‘Keoeeit’, the Inuit-word for the Aurora Borealis or, in short, the aurora. A Keogram is an image that represents a series of images taken over the course of one night. Each image is represented by a vertical line of pixels in the resulting Keogram, sorted on time from left to right.</p>
+		<h3>About this website</h3>
+		<p><img src="interface/innovis.png" alt="InnoVis"><br>This website is developed at the InnoVis research group at the University of Calgary.<br><br><a href="http://innovis.cpsc.ucalgary.ca/">InnoVis website</a></p>
+	</section>
+
+	<section class="overlay overlay2">
+		<img src="interface/yellowknife.png" alt="Map">
+		<h2>Where is Yellowknife?</h2>
+		<p>Yellowknife is the location of the camera that took the images used on this website. Yellowknife's latitude (62 degrees North) and semi-arid subarctic climate (which averages less than 300 mm of precipitation annually) make for ideal viewing conditions for the northern lights. The auroral oval is often found directly overhead, resulting in auroral displays almost every night, even when the solar wind is calm.</p>
+
+		<h3>Location details</h3>
+		<p>Location: Yellowknife, N.W.T.<br>
+		Longitude: 114°21'W<br>
+		Latitude: 62°26'N</p>
+
+		<h3>Camera details</h3>
+		<p>Lens: 180° fisheye<br>
+		Shutter interval: 0.00 seconds<br>
+		ISO: 500<br>
+		Aperture: 2.8<br>
+		Exposure time: 5 seconds</p>
+	</section>
+
+	<section class="overlay overlay3">
+		<img src="interface/auroramax.jpg" alt="Logo">
+		<p class="links">useful links:</p>
+		<p class="links"><a href="http://www.asc-csa.gc.ca/eng/astronomy/auroramax/" target="_blank">Official AuroraMAX website</a></p>
+		<p class="links"><a href="http://data.phys.ucalgary.ca/sort_by_project/AuroraMAX/" target="_blank">Repository containing all images</a></p>
+		<h2>What is AuroraMAX?</h2>
+		<p>AuroraMAX is a five-year educational and public outreach initiative that features live broadcast of the Northern Lights from Yellowknife, Northwest Territories. The project is designed to raise awareness of the science of the Northern Lights, and how the Sun’s relationship with Earth can affect our daily lives.</p>
+
+		<p>AuroraMAX will allow skywatchers to follow the intensity and frequency of the aurora borealis leading up to Solar Maximum (hence the name AuroraMAX). Solar Maximum, the most active period of the Sun’s 11-year cycle (which consequently produces the most active auroras), is expected to peak in 2013.</p>
+
+		<p>AuroraMAX is a collaborative initiative between the University of Calgary, the City of Yellowknife, Astronomy North and the Canadian Space Agency. The University of Calgary provides technical and scientific support for AuroraMAX. Led by space physicist Eric Donovan, the University of Calgary team developed and operates the world’s foremost network of auroral cameras, including AuroraMAX. Project management for AuroraMAX is led jointly by the Canadian Space Agency at the national level and by Astronomy North (a society dedicated to northern sky education and awareness) in northern regions.</p>
+	</section>
+</body>
+</html>
