@@ -19,6 +19,9 @@ Website available at http://charlesperin.net
 - add label and page in menu.yml
 - create page in "pages"
 
+## to deploy
+- push _site content to github repo
+
 ## Credits
 
 Built using [Jekyll](https://jekyllrb.com/)
