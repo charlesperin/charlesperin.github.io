@@ -15,6 +15,9 @@ Website available at http://charlesperin.net
 - create PROJECT_NAME.md in _projects
 - put the description in the project md file instead of the publication - keep description_short in publication
 
+## redirections
+look at demo/dragvispub/index.html
+
 ## to add a menu item:
 - add label and page in menu.yml
 - create page in "pages"
