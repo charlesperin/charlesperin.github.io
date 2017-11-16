@@ -647,7 +647,7 @@
 		}
 
 		.row {
-			margin: -25px 0 -1px -25px;
+			margin: -25px 10px -1px -15px;
 		}
 
 		.row.uniform > * {
@@ -862,7 +862,7 @@
 		}
 
 		.row {
-			margin: -20px 0 -1px -20px;
+			margin: -20px 10px -1px -10px;
 		}
 
 		.row.uniform > * {

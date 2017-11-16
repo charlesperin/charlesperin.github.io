@@ -4,6 +4,11 @@ Website available at http://charlesperin.net
 
 ## Getting started
 
+### to generate deployment version the demos, in config.yml, comment folders from the exclude list:
+ - demo
+ 
+
+
 ### incremental
 > bundle exec jekyll serve watch --future --incremental
 
