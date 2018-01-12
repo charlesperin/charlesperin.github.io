@@ -4,10 +4,9 @@ Website available at http://charlesperin.net
 
 ## Getting started
 
-### to generate deployment version the demos, in config.yml, comment folders from the exclude list:
+### to generate deployment version with the demos, in config.yml, comment folders from the exclude list:
  - demo
  
-
 
 ### incremental
 > bundle exec jekyll serve watch --future --incremental
@@ -28,7 +27,7 @@ look at demo/dragvispub/index.html
 - create page in "pages"
 
 ## to deploy
-- push _site content to github repo
+- push _site/ content to github repo
 
 ## Credits
 
