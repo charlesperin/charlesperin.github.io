@@ -2,15 +2,11 @@
 
 Website available at http://charlesperin.net
 
-## Getting started
 
-To install missing gems, run:
-> bundle install
+## How To
 
-To generate deployment version with the demos, in \_config.yml, uncomment folders from the exclude list:
- - demo
-
-Local server at: http://127.0.0.1:4000/
+### Compile
+- Uncomment "demo" from the exclude list on \_config.yml to generate much faster
 
 incremental
 > bundle exec jekyll serve watch --future --incremental
@@ -18,23 +14,84 @@ incremental
 with drafts
 > bundle exec jekyll serve watch --future --incremental --drafts
 
-## to create a project with multiple publications
+Local server at: http://127.0.0.1:4000/
+
+
+
+### Install missing gems
+> bundle install
+
+### Deploy website
+- Comment the "demo" folder from the exclude list in \_config.yml
+- push \_site/ content to github repo
+
+### Create redirection
+look at demo/dragvispub/index.html
+
+### Add a menu item:
+- add label and page in menu.yml
+- create page in "pages"
+
+
+
+
+
+
+
+
+
+## Adding content
+
+### Short bio
+- edit \_includes/short-bio.html
+
+### social links
+- edit \_includes/social-links-horizontal.html
+
+### Publication
+- create post in \_posts/publications
+- add thumbnail in images/publis (400x300)
+- add teaser in images/publis
+- authors are author aliases in the people.csv file
+
+### Organized workshop
+- create post in \_posts/workshops
+
+### Blog post
+- create post in \_posts/blog
+- images go in images/blog
+
+### Event
+- create post in \_posts/events
+- thumbnail: in images/events/[alias]/[alias]-thumbnail.png
+
+### News
+- create post in \_posts/news
+- remove the --incremental option to see the changes happen
+
+### Project with multiple publications
+- create post in \_posts/projects
+- images go in images/projects/...
+- need a teaser image
 - add field: project: PROJECT_NAME in publications
 - create PROJECT_NAME.md in \_projects
 - put the description in the project md file instead of the publication - keep description_short in publication
 
-## redirections
-look at demo/dragvispub/index.html
+### Reviewing
+- in \_data/reviewing.csv
 
-## to add a menu item:
-- add label and page in menu.yml
-- create page in "pages"
+### Co-authors
+- add in \_data/people.csv
+- add (square) JPG picture in images/people named [alias].jpg
 
-## to deploy
-- uncomment the "demo" folder from the exclude list in \_config.yml
-- push \_site/ content to github repo
+### Make a publication or project highlighted on home page
+- add to the publication or project the property _featured: true_
+- Make sure it also has a "description_short: [short description]" property
+
+
+
+
 
 ## Credits
-
 - Built using [Jekyll](https://jekyllrb.com/)
 - Design partly based on [Dopetrope by html5up](https://html5up.net/dopetrope)

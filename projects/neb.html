@@ -1,0 +1,1202 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Open Data Visualization with the NEB</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="We have been working with the National Energy Board of Canada towards improving the role of visualization for citizens, energy stakeholders and decision-makers to explore and make sense of open data." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/co-authors">CO-AUTHORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+			<a href="./../images/projects/neb-teaser.png" class="image featured"><img src="/images/projects/neb-teaser.png"/></a>
+			
+			
+			<header style="margin-bottom: 9em;">
+				<h2>Open Data Visualization with the NEB</h2>
+				
+			<div class="row authors-grid">
+				<div class="12u">
+					<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/knudsen.jpg"/>
+				</div>
+				<p>
+					Soren<br/>
+					Knudsen
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://jovermeulen.com/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/vermeulen.jpg"/>
+				</div>
+				<p>
+					Jo<br/>
+					Vermeulen
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/kominsky.jpg"/>
+				</div>
+				<p>
+					Doris<br/>
+					Kominsky
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://research.jagoda.ca/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/walny.jpg"/>
+				</div>
+				<p>
+					Jagoda<br/>
+					Walny
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/west.jpg"/>
+				</div>
+				<p>
+					Mieka<br/>
+					West
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/frisson.jpg"/>
+				</div>
+				<p>
+					Christian<br/>
+					Frisson
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://bonadriel.com/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/aseniero.jpg"/>
+				</div>
+				<p>
+					Bon Adriel<br/>
+					Aseniero
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://www.lindsaymacdonald.net/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/macdonald.jpg"/>
+				</div>
+				<p>
+					Lindsay<br/>
+					MacDonald
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://charlesperin.net" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/quach.jpg"/>
+				</div>
+				<p>
+					Lien<br/>
+					Quach
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/buk.jpg"/>
+				</div>
+				<p>
+					Peter<br/>
+					Buk
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/tabuli.jpg"/>
+				</div>
+				<p>
+					Katrina<br/>
+					Tabuli
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/chopra.jpg"/>
+				</div>
+				<p>
+					Shreya<br/>
+					Chopra
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://www.wjwillett.net/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/willett.jpg"/>
+				</div>
+				<p>
+					Wesley<br/>
+					Willett
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://pages.cpsc.ucalgary.ca/~sheelagh/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/carpendale.jpg"/>
+				</div>
+				<p>
+					Sheelagh<br/>
+					Carpendale
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/blascheck.jpg"/>
+				</div>
+				<p>
+					Tanja<br/>
+					Blascheck
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/ertl.jpg"/>
+				</div>
+				<p>
+					Thomas<br/>
+					Ertl
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+				</div>
+			</div>
+				
+				<p>We have been working with the National Energy Board of Canada towards improving the role of visualization for citizens, energy stakeholders and decision-makers to explore and make sense of open data.</p>
+			</header>
+			
+			
+			
+			
+			
+			
+			
+						
+				<section>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Innovation award for energy futures visualizations</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">In December 2016 the National Energy Board of Canada (NEB) was awarded a Regulatory Excellence Award in the category 'Contribution to Innovation in the Regulatory Field' for the Energy Futures visualizations. I was leading the design team at the University of Calgary that designed these interactive visualizations to make the NEB's Energy Futures data accessible to the general public. The award was granted to the NEB by the Community of Federal Regulators at the Regulatory Excellence Awards ceremony in Ottawa.</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Understanding how people discover interactive functionality</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-left">We used the interactive visualizations we designed to investigate the discovery of the functionality of an interactive visualization designed for the general public. While interactive visualizations are increasingly available for public use, we still know little about how the general public investigates and discovers what they can do with these visualizations. Understanding the discovery process allows to develop better interfaces for the general public and make data more accessible to them. To unpack this problem, we analyzed the results of a lab study where participants discovered the functionality of a connected set of visualizations of public energy data. We collected eye tracking data and interaction logs, as well as video and audio recordings. By integrating this quantitative and qualitative data, we extracted five exploration strategies employed by participants to discover the functionality in these interactive visualizations. These exploration strategies illuminate possible design directions for future interactive visualizations.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+				</section>
+			
+			
+			<section>
+				
+
+			</section>
+			
+			
+			<section>
+				
+					
+						<h3>Video</h3>
+					
+				
+				
+				
+					
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://www.youtube.com/embed/COC0YSLeC9I" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+				
+			</section>
+			
+			
+			
+			
+			<section>
+				<h3>Project Publications</h3>
+				
+				
+				
+				
+				
+				
+				<ul id="pub-ul">
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/neb"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2018_CHI_neb_demo-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+					<div class="pub-type conference">CHI EA '18</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Soren Knudsen, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jo Vermeulen, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Doris Kominsky, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jagoda Walny, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Mieka West, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Christian Frisson, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bon Adriel Aseniero, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Lindsay MacDonald, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Lien Quach, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Peter Buk, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Katrina Tabuli, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Shreya Chopra, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Wesley Willett, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Democratizing Open Energy Data for Public Discourse using Visualization</span>
+	<span class="publication-proceedings">Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems. ACM</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2018_CHI_neb_demo.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			<a href="https://apps2.neb-one.gc.ca/dvs/?page=landingPage&language=en" class="icon">
+				<img class="icon" src="/images/icon/icon_demo.png"/>
+			</a>
+			
+			
+			
+								
+			
+			<a href="https://www.youtube.com/watch?v=COC0YSLeC9I" class="icon">
+				<img class="icon" src="/images/icon/icon_movie_clap.png"/>
+			</a>
+			
+			
+			
+			
+			
+			<a href="https://hal.archives-ouvertes.fr/hal-01806100/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/neb"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2018_TVCG_NEB_discovery-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+					<div class="pub-type journal">TVCG</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Tanja Blascheck, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Lindsay MacDonald, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jo Vermeulen, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Wesley Willett, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Thomas Ertl, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Exploration Strategies for Discovery of Interactivity in Visualizations</span>
+	<span class="publication-proceedings">IEEE Transactions on Visualization and Computer Graphics (TVCG). IEEE</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2018_TVCG_NEB_discovery.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			<a href="http://innovis.cpsc.ucalgary.ca/supplemental/Exploration-Strategies/" class="icon">
+				<img class="icon" src="/images/icon/icon_data.png"/>
+			</a>
+			
+			
+			
+			<a href="https://apps2.neb-one.gc.ca/dvs/?page=landingPage&language=en" class="icon">
+				<img class="icon" src="/images/icon/icon_demo.png"/>
+			</a>
+			
+			
+			
+			<a href="http://innovis.cpsc.ucalgary.ca/supplemental/Exploration-Strategies/" class="icon">
+				<img src="/images/icon/icon_website.png"/>
+			</a>
+			
+								
+			
+			
+			
+			
+			
+			<a href="https://hal.archives-ouvertes.fr/hal-01705792/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</ul>
+			</section>
+		</article>
+	</div>
+</div>
+	
+	
+	
+	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Jun. 29, 2018
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->
