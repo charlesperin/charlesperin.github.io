@@ -1,0 +1,544 @@
+html {
+    min-width: 1040px;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif, 12px;
+    margin: 1em auto 4em auto;
+    position: relative;
+    width: 960px;
+    font-size: 10px;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+circle, g, path, rect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+path.hulls {
+    opacity: 0.3;
+    stroke-width: 15;
+}
+
+path.hulls:hover {
+  opacity: 0.2;
+  stroke-width: 25;
+}
+
+path.lasso {
+    stroke-width: 2;
+    stroke-opacity : 0.2;
+    opacity: 0.5;
+    fill-opacity :0.3;
+}
+
+.background {
+    fill: white;
+    fill-opacity: 0;
+}
+
+.background:hover {
+    border: 0.5px solid red;
+}
+
+.rect-label {
+    left: 220px;
+    top:25px;
+    position:absolute;
+    height:30px;
+    width:30px;
+    margin:2px;
+    border: 0.5px solid white;
+    cursor: pointer;
+    fill: white;
+    fill-opacity: 0;
+}
+
+.link {
+    stroke-width: .8;
+    opacity: 0.5;
+    stroke: black;
+    fill: none;
+}
+
+.node.selected .node-fg, .player-formation.selected circle{
+    stroke: red;
+    stroke-width: 3;
+}
+
+.player-formation circle{
+    stroke: black;
+    stroke-width: 1;
+}
+
+.node .node-bg, .contextNodes .node-bg{
+    fill: white;
+    stroke: black;
+    stroke-width:1;
+}
+
+.node .node-fg, .contextNodes .node-fg{
+    fill: none;
+    fill-opacity: .1;
+    stroke-width: 1;
+    stroke: black;
+}
+
+.node text, .contextNodes text{
+    font-family: "Verdana";
+    font-size:8px;
+    font-weight: "bold";
+}
+
+
+
+
+path.hulls{
+    fill:red;
+    stroke:red;
+    opacity:.1;
+}
+
+/*var SUB_CHAIN_TYPE_ENTRY_POINT = 0;*/
+path.hulls[type="0"]{
+    fill:#FFCC00;
+    stroke:#FFCC00;
+}
+/*var SUB_CHAIN_TYPE_EXIT_POINT = 1;*/
+path.hulls[type="1"]{
+    fill:#FF0000;
+    stroke:#FF0000;
+}
+/*var SUB_CHAIN_TYPE_LONG_RUN = 2;*/
+path.hulls[type="2"]{
+    fill:yellow;
+    stroke:yellow;
+}
+/*var SUB_CHAIN_TYPE_NON_PASS_EVENT = 3;*/
+path.hulls[type="3"]{
+    fill:#FFFF00;
+    stroke:#FFFF00;
+}
+/*var SUB_CHAIN_TYPE_PERSONAL_ACTION_BEFORE_SHOT = 4;*/
+path.hulls[type="4"]{
+    fill:#991100;
+    stroke:#991100;
+}
+/*var SUB_CHAIN_TYPE_PASS_CLUSTER = 6;*/
+path.hulls[type="6"]{
+    fill:black;
+    stroke:black;
+}
+/*var SUB_CHAIN_TYPE_PASS_STANDARD = 100;*/
+path.hulls[type="100"]{
+    fill:black;
+    stroke:black;
+}
+/*var SUB_CHAIN_TYPE_PASS_LONG = 101;*/
+path.hulls[type="101"]{
+    fill:black;
+    stroke:black;
+}
+/*var SUB_CHAIN_TYPE_PASS_FREEKICK = 102;*/
+path.hulls[type="102"]{
+    fill:black;
+    stroke:black;
+}
+/*var SUB_CHAIN_TYPE_PASS_HEAD = 103;*/
+path.hulls[type="103"]{
+    fill:black;
+    stroke:black;
+}
+
+/*var SUB_CHAIN_TYPE_PASS_CROSS_TO_GOAL_AREA = 104;*/
+path.hulls[type="104"]{
+    fill:black;
+    stroke:black;
+}
+
+
+
+
+.subChainLink{
+    stroke: red;
+    stroke-width: 5px;
+}
+
+.subChainNode .background{
+    fill: white;
+    stroke: black;
+    stroke-width: .5px;
+}
+
+.subChainNode .axis line{
+    fill:none;
+    stroke:black;
+    stroke-width:1;
+}
+.subChainNode .axis circle{
+    fill:white;
+    stroke:black;
+    stroke-width:1;
+}
+.subChainNode .axis text{
+    text-anchor:middle;
+    stroke:none;
+    fill:black;
+}
+
+.field .fieldLines, .field .fieldRect, .sequenceVisSequence .fieldLines, .sequenceVisSequence .fieldRect{
+    stroke-width:.5;
+    fill: none;
+    stroke: gray;
+}
+
+.field .fieldPoints, .sequenceVisSequence .fieldPoints{
+    fill: gray;
+}
+
+.field .fieldRect, .sequenceVisSequence .fieldRect{
+    fill: white;
+}
+
+.field .E_PASS{
+    fill:none;
+    stroke:black;
+}
+
+.field .E_SHOT_MISS, .field .E_SHOT_POST,.field .E_SHOT_SAVED, .field .E_SHOT_GOAL, .field .E_SHOT_CHANCE_MISSED{
+    fill: none;
+    stroke:red;
+}
+
+.field .E_AERIAL_DUEL{
+    fill: none;
+    stroke:blue;
+}
+
+.field .E_FOUL{
+    fill: none;
+    stroke: brown;
+}
+
+.field .E_CORNER{
+    fill: none;
+    stroke: pink;
+}
+
+.field .E_SPECIAL_TAKE_ON{
+    fill: none;
+    stroke: orange;
+}
+
+.field .E_DEF_TACKLE{
+    fill: none;
+    stroke: purple;
+}
+
+.field .E_DEF_INTERCEPTION{
+    fill: none;
+    stroke: orange;
+}
+
+.field .E_DUPLICATE{
+    fill: none;
+    stroke: black;
+}
+
+.field .link{
+    stroke-width:2;
+}
+
+.field .dashed{
+    stroke-dasharray: 5,5;
+}
+
+.field .dotted{
+    stroke-dasharray: 2,5;
+}
+
+.field .plain{
+
+}
+
+
+
+/*
+Classes for ShotsVis
+*/
+.ShotsVis .goalPost{
+    stroke: black;
+    fill: none;
+    stroke-width:.8;
+}
+
+.ShotsVis .shot_missed{
+    fill: red;
+    stroke: red;
+}
+
+.ShotsVis .shot_post{
+    fill: pink;
+    stroke: pink;
+}
+
+.ShotsVis .shot_saved{
+    fill: blue;
+    stroke: blue;
+}
+
+.ShotsVis .shot_goal{
+    fill: green;
+    stroke: green;
+}
+
+.ShotsVis .shot_chance_missed{
+    fill: orange;
+    stroke: orange;
+}
+
+.ShotsVis .shots_shots circle{
+    stroke-width:0;
+}
+
+.ShotsVis .shots_shots line{
+    stroke-width:1;
+}
+
+.ShotsVis .visuShotsSlider line {
+    stroke: red;
+    stroke-width: 10;
+    cursor: pointer;
+}
+
+.ShotsVis .visuShotsSlider rect {
+    fill: white;
+}
+
+.ShotsVis .visuShotsFilterModes, .ShotsVis .visuShotsVisuModes, .ShotsVis .visuShotsBrushing{
+    fill:white;
+}
+
+.ShotsVis .brush .extent {
+    stroke: orange;
+    stroke-width:2;
+    fill-opacity: .08;
+    shape-rendering: crispEdges;
+}
+
+.ShotsVis .shot_hidden{
+    opacity:0;
+}
+
+.ShotsVis .shot_visible{
+    opacity:.6;
+}
+
+.ShotsVis .shot_transparent{
+    opacity:0.15;
+}
+
+.ShotsVis .modes_text, .ShotsVis .filters_text, .ShotsVis .stats_text{
+    font-size: 9px;
+    font-family:'Trebuchet MS',Arial, Helvetica;
+    fill:white;
+    stroke-width:0;
+}
+
+.ShotsVis .modes_selected, .ShotsVis .orders_selected{
+    fill:red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+The timeline classes
+*/
+.timeline .timelineAxis{
+    fill:none;
+    stroke: black;
+    stroke-width:.5;
+}
+.timeline .timeTicks .tick text{
+    fill:black;
+    stroke:none;
+}
+.timeline .timeTicks .tick line{
+    fill:none;
+    stroke:black;
+    stroke-width:.5;
+}
+.timeline .timeTicks .domain{
+    opacity:0;
+}
+.timeline .lastEvent{
+    stroke: black;
+    stroke-width:2;
+}
+.timeline rect{
+    stroke: black;
+    stroke-width:.5;
+    fill: none;
+}
+
+.timelineInfosEvents{
+    fill-opacity:.3;
+}
+
+.thumb_node .E_PASS, .timelineInfosEvents .E_PASS, .sequencesVisNode .E_PASS{
+    fill:black;
+    stroke:black;
+}
+
+.thumb_node .E_SHOT_MISS, .thumb_node .E_SHOT_POST,.thumb_node .E_SHOT_SAVED, .thumb_node .E_SHOT_GOAL, .thumb_node .E_SHOT_CHANCE_MISSED, .timelineInfosEvents .E_SHOT_MISS, .timelineInfosEvents .E_SHOT_POST,.timelineInfosEvents .E_SHOT_SAVED, .timelineInfosEvents .E_SHOT_GOAL, .timelineInfosEvents .E_SHOT_CHANCE_MISSED, .sequencesVisSequence .E_SHOT_MISS, .sequencesVisSequence .E_SHOT_POST,.sequencesVisSequence .E_SHOT_SAVED, .sequencesVisSequence .E_SHOT_GOAL, .sequencesVisSequence .E_SHOT_CHANCE_MISSED{
+    fill: red;
+    stroke:red;
+}
+
+.thumb_node .E_AERIAL_DUEL, .timelineInfosEvents .E_AERIAL_DUEL, .sequencesVisSequence .E_AERIAL_DUEL{
+    fill: blue;
+    stroke:blue;
+}
+
+.thumb_node .E_FOUL, .timelineInfosEvents .E_FOUL, .sequencesVisSequence .E_FOUL{
+    fill: brown;
+    stroke: brown;
+}
+
+.thumb_node .E_CORNER, .timelineInfosEvents .E_CORNER, .sequencesVisSequence .E_CORNER{
+    fill: pink;
+    stroke: pink;
+}
+
+.thumb_node .E_SPECIAL_TAKE_ON, .timelineInfosEvents .E_SPECIAL_TAKE_ON, .sequencesVisSequence .E_SPECIAL_TAKE_ON{
+    fill: orange;
+    stroke: orange;
+}
+
+.thumb_node .E_DEF_TACKLE, .timelineInfosEvents .E_DEF_TACKLE, .sequencesVisSequence .E_DEF_TACKLE{
+    fill: purple;
+    stroke: purple;
+}
+
+.thumb_node .E_DEF_INTERCEPTION, .timelineInfosEvents .E_DEF_INTERCEPTION, .sequencesVisSequence .E_DEF_INTERCEPTION{
+    fill: orange;
+    stroke: orange;
+}
+
+.timelineLink{
+    fill: none;
+    stroke-width: .5;
+    stroke: black;
+}
+
+.timelineTriangle{
+    fill:#3300CC;
+    stroke:#3300CC;
+    stroke-width:1;
+    fill-opacity: .1;
+}
+
+.timeline .eventsGroup .cluster{
+    stroke-width:0;
+    stroke: red;
+}
+
+
+
+.dragSquare rect{
+    stroke: black;
+    stroke-width: 3px;
+    fill: white;
+}
+
+.dragSquare path{
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.globalFlow{
+    stroke:black;
+    stroke-width:40;
+    stroke-opacity:.06;
+    stroke-linecap:round;
+    fill:none;
+}
+
+
+
+
+.SequenceVisNodes{
+    stroke: none;
+}
+
+.sequenceVisSequence .context{}
+
+
+
+#liveCoverVis .teamName{
+    fill: black;
+    font-size: 25px;
+    font-family: "verdana";
+}
+#liveCoverVis .matchDetails{
+    fill: black;
+    font-size: 11px;
+    font-family: "verdana";
+}
+
+
+#settings div{
+    display: inline-block;
+    position:relative;
+    border: 1px solid black;
+}
+#settings #globalFlowSize{
+    margin:10px;
+}
+
+.ui-slider .ui-slider-handle { height: 100%;top:-1px }
+.ui-slider {max-height:20px;height:80%;top:0}
+
+
+
+
+/*
+styles for the livecoverinfos
+*/
+
+.stats .stats-g rect.bg{
+    stroke: black;
+    stroke-width: 1;
+    fill:white;
+}
+.stats .stats-g rect.fg{
+    stroke: none;
+    stroke-width: 0;
+    fill:steelblue;
+}

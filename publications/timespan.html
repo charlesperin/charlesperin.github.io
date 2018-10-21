@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>TimeSpan: Using Visualization to Explore Temporal Multi-Dimensional Data of Stroke Patients</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="We present TimeSpan, an exploratory visualization tool designed to gain a better understanding of the temporal aspects of the stroke treatment process. Working with stroke experts, we seek to provide a tool to help improve outcomes for stroke victims. Time is of critical importance in the treatment of acute ischemic stroke patients. Every minute that the artery stays blocked, an estimated 1.9 million neurons and 12 km of myelinated axons are destroyed. Consequently, there is a critical need for efficiency of stroke treatment processes. Optimizing time to treatment requires a deep understanding of interval times. Stroke health care professionals must analyze the impact of procedures, events, and patient attributes on time—ultimately, to save lives and improve quality of life after stroke. First, we interviewed eight domain experts, and closely collaborated with two of them to inform the design of TimeSpan. We classify the analytical tasks which a visualization tool should support and extract design goals from the interviews and field observations. Based on these tasks and the understanding gained from the collaboration, we designed TimeSpan, a web-based tool for exploring multi-dimensional and temporal stroke data. We describe how TimeSpan incorporates factors from stacked bar graphs, line charts, histograms, and a matrix visualization to create an interactive hybrid view of temporal data. From feedback collected from domain experts in a focus group session, we reflect on the lessons we learned from abstracting the tasks and iteratively designing TimeSpan." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+							class="current"
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/co-authors">CO-AUTHORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+				<a href="./../images/publis/2016_VIS_timespan-teaser.png" class="image featured"><img src="/images/publis/2016_VIS_timespan-teaser.png"/></a>
+			
+			
+
+			
+			<header>
+				<h2>TimeSpan: Using Visualization to Explore Temporal Multi-Dimensional Data of Stroke Patients</h2>
+				
+				<div class="row authors-grid">
+					<div class="12u">
+						
+						<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://www.ucalgary.ca/mhosseinkhani/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/hosseinkhani.jpg"/>
+				</div>
+				<p>
+					Mona<br/>
+					Hosseinkhani Loorak
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://charlesperin.net" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/kamal.jpg"/>
+				</div>
+				<p>
+					Naureen<br/>
+					Kamal
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://www.ucalgary.ca/dcns/about-dcns/faculty/hill-michael" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/hill.jpg"/>
+				</div>
+				<p>
+					Michael<br/>
+					Hill
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://pages.cpsc.ucalgary.ca/~sheelagh/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/carpendale.jpg"/>
+				</div>
+				<p>
+					Sheelagh<br/>
+					Carpendale
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+					</div>
+				</div>
+				<p>We present TimeSpan, an exploratory visualization tool designed to gain a better understanding of the temporal aspects of the stroke treatment process. Working with stroke experts, we seek to provide a tool to help improve outcomes for stroke victims. Time is of critical importance in the treatment of acute ischemic stroke patients. Every minute that the artery stays blocked, an estimated 1.9 million neurons and 12 km of myelinated axons are destroyed. Consequently, there is a critical need for efficiency of stroke treatment processes. Optimizing time to treatment requires a deep understanding of interval times. Stroke health care professionals must analyze the impact of procedures, events, and patient attributes on time—ultimately, to save lives and improve quality of life after stroke. First, we interviewed eight domain experts, and closely collaborated with two of them to inform the design of TimeSpan. We classify the analytical tasks which a visualization tool should support and extract design goals from the interviews and field observations. Based on these tasks and the understanding gained from the collaboration, we designed TimeSpan, a web-based tool for exploring multi-dimensional and temporal stroke data. We describe how TimeSpan incorporates factors from stacked bar graphs, line charts, histograms, and a matrix visualization to create an interactive hybrid view of temporal data. From feedback collected from domain experts in a focus group session, we reflect on the lessons we learned from abstracting the tasks and iteratively designing TimeSpan.</p>
+			</header>
+			
+			<div class="row">
+				<div class="4u 12u(mobile)">
+					<div id="icon-legend" class="icon-horizontal">
+						
+						<a href="https://hal.archives-ouvertes.fr/hal-01618608/document" class="icon">
+							<img src="/images/icon/icon_pdf.png"/>
+							Download the document
+						</a>
+						
+						
+						
+						<a href="/publis/2016_VIS_timespan.bib" class="icon">
+							<img class="icon" src="/images/icon/icon_bib.png"/>
+							Download the bibtex
+						</a>
+						
+						
+						<a href="http://innovis.cpsc.ucalgary.ca/supplemental/timeSpan/" class="icon">
+							<img src="/images/icon/icon_website.png"/>
+							Visit the project website
+						</a>
+						
+						
+						
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					
+					<h4>Watch the accompanying video</h4>
+					
+					
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://player.vimeo.com/video/143162420?title=0&byline=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					
+					<h4>Watch the 30 seconds video preview</h4>
+					
+					
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://player.vimeo.com/video/136205834?title=0&byline=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+					
+				</div>
+			</div>
+			
+			
+			
+			
+						
+			
+
+			<section>
+				
+
+			</section>
+			
+		</article>
+	</div>
+</div>	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Oct. 19, 2018
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->

@@ -1,0 +1,455 @@
+1e journée, samedi 06/08/2011
+Nice, Lyon, 1-3
+Paris SG, Lorient, 0-1
+Marseille, Sochaux, 2-2
+Nancy, Lille, 1-1
+Montpellier, Auxerre, 3-1
+AC Ajaccio, Toulouse, 0-2
+Caen, Valenciennes, 1-0
+Brest, Evian TG, 2-2
+Dijon, Rennes, 1-5
+Bordeaux, St Etienne, 1-2
+
+2e journée, samedi 13/08/2011
+Rennes, Paris SG, 1-1
+Lyon, AC Ajaccio, 1-1
+Lorient, Bordeaux, 1-1
+St Etienne, Nancy, 1-0
+Sochaux, Caen, 1-2
+Toulouse, Dijon, 2-0
+Valenciennes, Brest, 0-0
+Auxerre, Marseille, 2-2
+Evian TG, Nice, 1-0
+Lille, Montpellier, 0-1
+
+3e journée, samedi 20/08/2011
+Brest, Lyon, 1-1
+Caen, Lille, 1-2
+Bordeaux, Auxerre, 1-1
+Nice, Toulouse, 1-1
+Dijon, Lorient, 2-0
+AC Ajaccio, Evian TG, 1-1
+Paris SG, Valenciennes, 2-1
+Montpellier, Rennes, 4-0
+Nancy, Sochaux, 1-2
+Marseille, St Etienne, 0-0
+
+4e journée, samedi 27/08/2011
+Valenciennes, Bordeaux, 1-2
+Lorient, Nancy, 2-1
+Auxerre, AC Ajaccio, 4-1
+Nice, Brest, 0-0
+Evian TG, Dijon, 0-1
+Lyon, Montpellier, 2-1
+Toulouse, Paris SG, 1-3
+Sochaux, St Etienne, 2-1
+Rennes, Caen, 3-2
+Lille, Marseille, 3-2
+
+5e journée, samedi 10/09/2011
+St Etienne, Lille, 1-3
+Dijon, Lyon, 1-2
+Bordeaux, Evian TG, 0-0
+Caen, Toulouse, 0-1
+Sochaux, Lorient, 1-1
+AC Ajaccio, Valenciennes, 3-1
+Marseille, Rennes, 0-1
+Montpellier, Nice, 1-0
+Nancy, Auxerre, 0-0
+Paris SG, Brest, 1-0
+
+6e journée, samedi 17/09/2011
+Toulouse, Bordeaux, 3-2
+Lorient, St Etienne, 3-0
+Brest, Montpellier, 2-2
+Auxerre, Caen, 1-1
+Nice, AC Ajaccio, 3-0
+Valenciennes, Dijon, 4-0
+Lille, Sochaux, 2-2
+Evian TG, Paris SG, 2-2
+Rennes, Nancy, 1-1
+Lyon, Marseille, 2-0
+
+7e journée, mercredi 21/09/2011
+Bordeaux, Lille, 1-1
+Paris SG, Nice, 2-1
+Marseille, Evian TG, 2-0
+Caen, Lyon, 1-0
+Sochaux, Rennes, 2-6
+Lorient, Auxerre, 1-1
+AC Ajaccio, Montpellier, 1-3
+Nancy, Valenciennes, 1-1
+Dijon, Brest, 1-0
+St Etienne, Toulouse, 1-1
+
+8e journée, samedi 24/09/2011
+Lyon, Bordeaux, 3-1
+Valenciennes, Marseille, 1-1
+Lille, Lorient, 1-1
+Toulouse, Nancy, 1-0
+Evian TG, Caen, 2-4
+Nice, Dijon, 1-1
+Montpellier, Paris SG, 0-3
+Auxerre, Sochaux, 4-1
+Brest, AC Ajaccio, 1-1
+Rennes, St Etienne, 1-1
+
+9e journée, samedi 01/10/2011
+St Etienne, Auxerre, 1-1
+Sochaux, Toulouse, 3-0
+Lorient, Valenciennes, 2-0
+Caen, Nice, 1-1
+Nancy, Evian TG, 1-1
+Dijon, AC Ajaccio, 1-1
+Bordeaux, Montpellier, 2-2
+Lille, Rennes, 2-0
+Marseille, Brest, 1-1
+Paris SG, Lyon, 2-0
+
+10e journée, samedi 15/10/2011
+Toulouse, Marseille, 0-0
+Lyon, Nancy, 3-1
+Auxerre, Lille, 1-3
+Evian TG, St Etienne, 1-2
+Montpellier, Dijon, 5-3
+Brest, Caen, 1-1
+Nice, Bordeaux, 3-0
+AC Ajaccio, Paris SG, 1-3
+Valenciennes, Sochaux, 3-0
+Rennes, Lorient, 2-0
+
+11e journée, samedi 22/10/2011
+Marseille, AC Ajaccio, 2-0
+Bordeaux, Brest, 1-1
+St Etienne, Valenciennes, 1-0
+Caen, Montpellier, 1-3
+Nancy, Nice, 1-0
+Sochaux, Evian TG, 1-1
+Lorient, Toulouse, 0-0
+Paris SG, Dijon, 2-0
+Auxerre, Rennes, 0-1
+Lille, Lyon, 3-1
+
+12e journée, samedi 29/10/2011
+Paris SG, Caen, 4-2
+Dijon, Marseille, 2-3
+AC Ajaccio, Bordeaux, 0-2
+Montpellier, Nancy, 2-0
+Evian TG, Auxerre, 3-1
+Brest, Lorient, 3-1
+Lyon, St Etienne, 2-0
+Toulouse, Rennes, 1-0
+Nice, Sochaux, 1-1
+Valenciennes, Lille, 0-0
+
+13e journée, dimanche 06/11/2011
+Lille, Evian TG, 1-1
+Marseille, Nice, 2-0
+Sochaux, Lyon, 2-1
+St Etienne, Montpellier, 1-1
+Rennes, Valenciennes, 1-1
+Lorient, AC Ajaccio, 2-0
+Nancy, Brest, 2-1
+Caen, Dijon, 3-0
+Auxerre, Toulouse, 2-0
+Bordeaux, Paris SG, 1-1
+
+14e journée, samedi 19/11/2011
+Lyon, Rennes, 1-2
+Toulouse, Lille, 0-0
+Nice, St Etienne, 0-2
+Dijon, Bordeaux, 2-0
+Evian TG, Lorient, 2-1
+AC Ajaccio, Caen, 2-2
+Montpellier, Marseille, 1-0
+Valenciennes, Auxerre, 2-1
+Brest, Sochaux, 2-0
+Paris SG, Nancy, 0-1
+
+15e journée, samedi 26/11/2011
+Bordeaux, Caen, 2-0
+St Etienne, AC Ajaccio, 3-1
+Sochaux, Montpellier, 1-3
+Rennes, Evian TG, 3-2
+Toulouse, Valenciennes, 2-0
+Nancy, Dijon, 1-2
+Lille, Brest, 2-0
+Auxerre, Lyon, 0-3
+Lorient, Nice, 1-0
+Marseille, Paris SG, 3-0
+
+16e journée, samedi 03/12/2011
+Caen, Marseille, 1-2
+AC Ajaccio, Lille, 2-3
+Montpellier, Lorient, 4-0
+Brest, St Etienne, 2-2
+Evian TG, Valenciennes, 2-1
+Dijon, Sochaux, 0-0
+Nice, Rennes, 2-0
+Paris SG, Auxerre, 3-2
+Bordeaux, Nancy, 2-0
+Lyon, Toulouse, 3-2
+
+17e journée, samedi 10/12/2011
+Sochaux, Paris SG, 0-1
+St Etienne, Caen, 2-0
+Toulouse, Evian TG, 2-1
+Valenciennes, Montpellier, 1-0
+Rennes, Brest, 1-1
+Nancy, AC Ajaccio, 2-2
+Marseille, Bordeaux, 0-0
+Lille, Dijon, 2-0
+Auxerre, Nice, 2-1
+Lorient, Lyon, 0-1
+
+18e journée, samedi 17/12/2011
+Marseille, Lorient, 2-1
+Montpellier, Toulouse, 1-1
+Dijon, St Etienne, 1-2
+Nice, Valenciennes, 2-0
+Caen, Nancy, 1-2
+Brest, Auxerre, 1-0
+Lyon, Evian TG, 2-1
+Bordeaux, Sochaux, 1-0
+AC Ajaccio, Rennes, 1-0
+Paris SG, Lille, 0-0
+
+19e journée, mercredi 21/12/2011
+Nancy, Marseille, 1-3
+Valenciennes, Lyon, 1-0
+Lille, Nice, 4-4
+Rennes, Bordeaux, 1-0
+Evian TG, Montpellier, 4-2
+Toulouse, Brest, 0-0
+Lorient, Caen, 0-0
+Sochaux, AC Ajaccio, 0-2
+Auxerre, Dijon, 2-2
+St Etienne, Paris SG, 0-1
+
+20e journée, samedi 14/01/2012
+Montpellier, Lyon, 1-0
+Paris SG, Toulouse, 3-1
+Bordeaux, Valenciennes, 2-1
+St Etienne, Sochaux, 1-0
+Caen, Rennes, 0-2
+Nancy, Lorient, 2-2
+Brest, Nice, 1-0
+AC Ajaccio, Auxerre, 2-1
+Dijon, Evian TG, 3-1
+Marseille, Lille, 2-0
+
+21e journée, samedi 28/01/2012
+Brest, Paris SG, 0-1
+Lyon, Dijon, 3-1
+Nice, Montpellier, 0-1
+Lorient, Sochaux, 1-1
+Auxerre, Nancy, 1-3
+Toulouse, Caen, 1-0
+Lille, St Etienne, 3-0
+Evian TG, Bordeaux, 0-0
+Valenciennes, AC Ajaccio, 1-2
+Rennes, Marseille, 1-2
+
+22e journée, samedi 04/02/2012
+Nancy, Rennes, 0-0
+Dijon, Valenciennes, 1-2
+Paris SG, Evian TG, 3-1
+Montpellier, Brest, 1-0
+AC Ajaccio, Nice, 1-1
+Bordeaux, Toulouse, 2-0
+Marseille, Lyon, 2-2
+Sochaux, Lille, 0-1
+St Etienne, Lorient, 4-2
+Caen, Auxerre, 2-1
+
+23e journée, samedi 11/02/2012
+Lyon, Caen, 1-2
+Auxerre, Lorient, 1-1
+Montpellier, AC Ajaccio, 3-0
+Valenciennes, Nancy, 1-0
+Rennes, Sochaux, 1-0
+Brest, Dijon, 1-1
+Lille, Bordeaux, 4-5
+Nice, Paris SG, 0-0
+Toulouse, St Etienne, 0-1
+Evian TG, Marseille, 2-0
+
+24e journée, samedi 18/02/2012
+Lorient, Lille, 0-1
+Nancy, Toulouse, 0-3
+Sochaux, Auxerre, 0-0
+Caen, Evian TG, 2-2
+Dijon, Nice, 3-0
+AC Ajaccio, Brest, 0-0
+Marseille, Valenciennes, 1-1
+Bordeaux, Lyon, 1-0
+St Etienne, Rennes, 4-0
+Paris SG, Montpellier, 2-2
+
+25e journée, samedi 25/02/2012
+Montpellier, Bordeaux, 1-0
+Auxerre, St Etienne, 0-0
+Evian TG, Nancy, 2-0
+Nice, Caen, 1-0
+Valenciennes, Lorient, 2-0
+AC Ajaccio, Dijon, 2-1
+Lyon, Paris SG, 4-4
+Brest, Marseille, 1-0
+Toulouse, Sochaux, 2-0
+Rennes, Lille, 1-1
+
+26e journée, samedi 03/03/2012
+Marseille, Toulouse, 0-1
+Nancy, Lyon, 2-0
+Lille, Auxerre, 2-2
+St Etienne, Evian TG, 0-2
+Sochaux, Valenciennes, 1-1
+Dijon, Montpellier, 1-1
+Bordeaux, Nice, 1-2
+Paris SG, AC Ajaccio, 4-1
+Caen, Brest, 0-0
+Lorient, Rennes, 0-2
+
+27e journée, samedi 10/03/2012
+AC Ajaccio, Marseille, 1-0
+Brest, Bordeaux, 0-2
+Valenciennes, St Etienne, 1-2
+Toulouse, Lorient, 1-1
+Nice, Nancy, 1-1
+Evian TG, Sochaux, 2-3
+Lyon, Lille, 2-1
+Dijon, Paris SG, 1-2
+Rennes, Auxerre, 1-1
+Montpellier, Caen, 3-0
+
+28e journée, samedi 17/03/2012
+Caen, Paris SG, 2-2
+Marseille, Dijon, 1-2
+Bordeaux, AC Ajaccio, 1-1
+Nancy, Montpellier, 1-0
+Auxerre, Evian TG, 0-2
+Lorient, Brest, 2-1
+St Etienne, Lyon, 0-1
+Rennes, Toulouse, 0-1
+Sochaux, Nice, 2-0
+Lille, Valenciennes, 4-0
+
+29e journée, samedi 24/03/2012
+Nice, Marseille, 1-1
+Lyon, Sochaux, 2-1
+Evian TG, Lille, 0-3
+Montpellier, St Etienne, 1-0
+AC Ajaccio, Lorient, 1-1
+Brest, Nancy, 0-1
+Valenciennes, Rennes, 1-0
+Toulouse, Auxerre, 1-0
+Dijon, Caen, 2-0
+Paris SG, Bordeaux, 1-1
+
+30e journée, samedi 31/03/2012
+St Etienne, Nice, 2-3
+Bordeaux, Dijon, 1-1
+Lorient, Evian TG, 0-1
+Auxerre, Valenciennes, 2-0
+Sochaux, Brest, 2-1
+Nancy, Paris SG, 2-1
+Lille, Toulouse, 2-1
+Caen, AC Ajaccio, 0-0
+Rennes, Lyon, 1-1
+Marseille, Montpellier, 1-3
+
+31e journée, samedi 07/04/2012
+Brest, Lille, 3-1
+AC Ajaccio, St Etienne, 1-1
+Evian TG, Rennes, 1-3
+Montpellier, Sochaux, 2-1
+Valenciennes, Toulouse, 2-0
+Dijon, Nancy, 0-2
+Lyon, Auxerre, 2-1
+Caen, Bordeaux, 1-0
+Nice, Lorient, 2-0
+Paris SG, Marseille, 2-1
+
+32e journée, dimanche 15/04/2012
+Lille, AC Ajaccio, 4-1
+Nancy, Bordeaux, 2-2
+Lorient, Montpellier, 2-1
+St Etienne, Brest, 2-1
+Valenciennes, Evian TG, 0-3
+Sochaux, Dijon, 1-0
+Auxerre, Paris SG, 1-1
+Rennes, Nice, 3-1
+Toulouse, Lyon, 3-0
+Marseille, Caen, 1-1
+
+33e journée, samedi 21/04/2012
+Dijon, Lille, 0-2
+Caen, St Etienne, 1-4
+Montpellier, Valenciennes, 1-0
+Evian TG, Toulouse, 2-1
+Nice, Auxerre, 1-0
+Brest, Rennes, 0-1
+Bordeaux, Marseille, 2-1
+Paris SG, Sochaux, 6-1
+AC Ajaccio, Nancy, 0-0
+Lyon, Lorient, 3-2
+
+34e journée, dimanche 29/04/2012
+Toulouse, Montpellier, 0-1
+Lorient, Marseille, 2-1
+Sochaux, Bordeaux, 0-3
+St Etienne, Dijon, 1-0
+Rennes, AC Ajaccio, 3-1
+Valenciennes, Nice, 2-0
+Auxerre, Brest, 4-0
+Nancy, Caen, 1-1
+Lille, Paris SG, 2-1
+Evian TG, Lyon, 1-3
+
+35e journée, mercredi 02/05/2012
+Montpellier, Evian TG, 2-2
+Marseille, Nancy, 1-0
+Lyon, Valenciennes, 4-1
+Nice, Lille, 0-1
+Bordeaux, Rennes, 2-0
+Caen, Lorient, 1-0
+Brest, Toulouse, 0-0
+AC Ajaccio, Sochaux, 2-1
+Paris SG, St Etienne, 2-0
+Dijon, Auxerre, 0-2
+
+36e journée, lundi 07/05/2012
+Lyon, Brest, 1-1
+Evian TG, AC Ajaccio, 2-1
+Valenciennes, Paris SG, 3-4
+St Etienne, Marseille, 0-0
+Lille, Caen, 3-0
+Auxerre, Bordeaux, 2-4
+Toulouse, Nice, 0-0
+Sochaux, Nancy, 1-0
+Lorient, Dijon, 0-0
+Rennes, Montpellier, 0-2
+
+37e journée, dimanche 13/05/2012
+Paris SG, Rennes, 3-0
+Montpellier, Lille, 1-0
+Marseille, Auxerre, 3-0
+AC Ajaccio, Lyon, 1-1
+Bordeaux, Lorient, 1-0
+Nancy, St Etienne, 3-2
+Nice, Evian TG, 1-1
+Caen, Sochaux, 1-3
+Dijon, Toulouse, 1-1
+Brest, Valenciennes, 1-0
+
+38e journée, dimanche 20/05/2012
+Lyon, Nice, 3-4
+Lorient, Paris SG, 1-2
+St Etienne, Bordeaux, 2-3
+Sochaux, Marseille, 1-0
+Lille, Nancy, 4-1
+Auxerre, Montpellier, 1-2
+Toulouse, AC Ajaccio, 0-2
+Rennes, Dijon, 5-0
+Evian TG, Brest, 0-1
+Valenciennes, Caen, 3-1
