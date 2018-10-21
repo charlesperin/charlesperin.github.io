@@ -23,9 +23,6 @@ Local server at: http://127.0.0.1:4000/
 
 ### Deploy website
 - Comment the "demo" folder from the exclude list in \_config.yml
-- compile with:
-> bundle exec jekyll serve watch --future
-- copy content of \_site/ repo to github local folder
 - push \_site/ content to github repo
 
 ### Create redirection
@@ -44,9 +41,6 @@ look at demo/dragvispub/index.html
 
 
 ## Adding content
-
-### Profile info
-- edit \_data/aboutme.json
 
 ### Short bio
 - edit \_includes/short-bio.html
