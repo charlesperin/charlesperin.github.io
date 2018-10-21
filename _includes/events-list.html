@@ -1,0 +1,25 @@
+
+		{% assign sorted_pub = site.categories['event'] | sort: 'date' | reverse %}
+		{% for pub in sorted_pub %}
+
+			{% assign loopindex = forloop.index | modulo: 2 %}
+			{% if loopindex == 1 %}
+				<div class="row events">
+			{% endif %}
+			
+			<div class="6u 12u(mobile)">
+					<a href="{{pub.url | prepend: site.baseurl }}" class="image">
+						<div class="img-zoom-wrapper">
+							<img src="{{ pub.thumb | prepend: site.baseurl}}"/>
+						</div>
+					</a>
+					<h4>{{pub.title}}</h4>
+					<p>{{pub.description_short}}</p>
+			</div>
+			
+			{% if loopindex == 0 or forloop.last %}
+				</div>
+			{% endif %}
+			
+		{% endfor %}
+

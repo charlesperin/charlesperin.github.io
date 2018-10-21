@@ -1,0 +1,26 @@
+<div id="logos-horizontal">
+
+</div>
+
+<script type="text/javascript">
+
+	var logos_data = [
+		{name: "email", url: "mailto:cperin@uvic.ca?cc=charles.perin@free.fr"},
+		{name: "google-scholar", url: "https://scholar.google.co.uk/citations?user=raZc4aoAAAAJ"},
+		{name: "twitter", url: "https://twitter.com/charles_perin"},
+		{name: "youtube", url: "https://www.youtube.com/channel/UCR-6n5_Zc3x4mFTW7sDP69w"},
+		{name: "github", url: "https://github.com/charlesperin"},
+		{name: "linkedin", url: "http://www.linkedin.com/in/perincharles"},
+		{name: "google-plus", url: "https://plus.google.com/115138409778098064244"},
+		{name: "facebook", url: "https://www.facebook.com/profile.php?id=100014041831472"}
+	];
+
+	var blocks = d3.select("#logos-horizontal").selectAll(".icon-horizontal").data(logos_data).enter().append("div").attr("class","icon-horizontal").append("a")
+		.attr("href", d => d.url)
+		.attr("rel","nofollow").attr("target", d => d.name != "email" ? "_blank" : "");
+
+	//blocks.append("p").html(d => d.name)
+	blocks.append("img").attr("src", d => "images/logo/logo-"+d.name+".png");
+
+
+</script>

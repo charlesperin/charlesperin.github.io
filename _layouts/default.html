@@ -1,0 +1,24 @@
+{% include header.html %}
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			{% if page.teaser %}
+				<a href="/{{ page.teaser }}" class="image featured"><img src="{{ page.teaser }}"/></a>
+			{% endif %}
+			
+			<header>
+				<h2>{{page.title}}</h2>
+				<p>{{ page.description }}</p>
+			</header>
+
+			{{ content }}
+			
+		</article>
+	</div>
+</div>
+
+{% include footer.html %}

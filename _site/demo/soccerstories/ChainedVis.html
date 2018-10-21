@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>ChainedVis</title>
+    <link rel="shortcut icon" href="./img/aviz.ico"/>
+    <link type="text/css" rel="stylesheet" href="./css/ChainedVis.css"/>
+    <link rel="stylesheet" href="./css/jquery-ui.css" />
+
+</head>
+<body>
+
+<script type="text/javascript" src="./lib/d3/d3.v3.js"></script>
+<script type="text/javascript" src="./lib/d3/d3.hive.js"></script>
+<script type="text/javascript" src="./lib/d3/d3.layout.cloud.js"></script>
+<script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/canvg.js"></script>
+<script type="text/javascript" src="./lib/rgbcolor.js"></script>
+<script src="./lib/jquery/jquery-ui.js"></script>
+
+
+<script type="text/javascript" src="./js/ChainedVis.js"></script>
+<script type="text/javascript" src="./js/ChainedVisPanel.js"></script>
+<script type="text/javascript" src="./js/Annotations.js"></script>
+<script type="text/javascript" src="./js/NodeLink.js"></script>
+<script type="text/javascript" src="./js/VisManager.js"></script>
+<script type="text/javascript" src="./js/Data.js"></script>
+<script type="text/javascript" src="./js/Formation.js"></script>
+<script type="text/javascript" src="./js/Sequence.js"></script>
+<script type="text/javascript" src="./js/Field.js"></script>
+<script type="text/javascript" src="./vis/TimelineVis.js"></script>
+<script type="text/javascript" src="./vis/SequenceInfos.js"></script>
+
+<script type="text/javascript" src="./vis/AbstractVis.js"></script>
+<script type="text/javascript" src="./vis/SimpleNodeVis.js"></script>
+<script type="text/javascript" src="./vis/CentreVis.js"></script>
+<script type="text/javascript" src="./vis/ShotsVis.js"></script>
+<script type="text/javascript" src="./vis/LongRunVis.js"></script>
+<script type="text/javascript" src="./vis/GraphPassVis.js"></script>
+<script type="text/javascript" src="./vis/GraphPassVisComplete.js"></script>
+<script type="text/javascript" src="./vis/HivePlotVis.js"></script>
+<script type="text/javascript" src="./vis/MatrixPassVis.js"></script>
+<script type="text/javascript" src="./vis/CloudPassVis.js"></script>
+<script type="text/javascript" src="./vis/LiveCoverVis.js"></script>
+<script type="text/javascript" src="./vis/TextAutoVis.js"></script>
+<script type="text/javascript" src="./vis/Matrix.js"></script>
+<script type="text/javascript" src="./vis/SelectionHull.js"></script>
+<script type="text/javascript" src="./vis/SequencesVis.js"></script>
+<script type="text/javascript" src="./vis/LiveCoverInfos.js"></script>
+
+<script type="text/javascript" src="./utils/utils.js"></script>
+
+
+<div id="nodetrix-container"></div>
+<div id="testSequencesButtons"></div>
+
+<div id="selParams" style="position:fixed; top:20px; right:0px;">
+    <div>
+        <label for="selection">Selection: </label>
+        <select id="select-visualization">
+            <option disabled>--MANUAL--</option>
+            <option value="ConvexHull" selected>Lasso</option>
+            <option value="Matrix">Rectangle</option>
+            <option disabled>--AUTOMATIC--</option>
+            <option value="SequenceSel">By sequence</option>
+            <option value="AttributeSel">By attribute</option>
+        </select>
+    </div>
+
+
+
+    <div>
+        <label for="layout">Layout: </label>
+        <select id="select-layout">
+            <option value="None" selected>None</option>
+            <option value="Circle">Circle</option>
+        </select>
+        <input type="button" value="Apply to current selection" />
+    </div>
+
+
+
+    <div>
+        <label for="visualization">Visualization: </label>
+        <select id="select-visualization">
+            <option disabled>--MANUAL--</option>
+            <option value="ConvexHull" selected>ConvexHull</option>
+            <option value="Matrix">Matrix</option>
+            <option value="GoogleMap">GoogleMap</option>
+            <option value="AlignVis">AlignVis</option>
+            <option disabled>--AUTOMATIC--</option>
+            <option value="Lucky">I'm feeling lucky!</option>
+        </select>
+    </div>
+</div>
+
+
+<div id="testSequences" style="position:fixed; left:210px;"></div>
+<div id="drawingArea"></div>
+
+<script type="text/javascript">
+    // customs/metroparisien/data/conv_json.php
+
+    //var TEST_MODE = "metro";
+    var TEST_MODE = "foot";
+
+
+    if(TEST_MODE == "metro") {
+
+
+        d3.json("./data/metro_paris.json", function(data) {
+            console.log(data);
+            var cv = new ChainedVis("Chained Visualizations", data);
+
+            d3.select("#testSequencesButtons")
+                    .append("button")
+                    .attr("id", "clusterizeButton")
+                    .style("position", "fixed")
+                    .style("top", "10px")
+                    .html("Clusterize by line")
+                    .on("click", function(){
+
+                        // for each group (metro line)
+                        var sel = [];
+                        d3.selectAll(".node").filter(function(d, i) {
+                            if(data.nodes[i].group==1)
+                                sel.push(i);
+                        });
+
+                        var vid = nd.vm.visList.length+1;
+                        var sh = new SelectionHull(1);
+                        sh.create(vid, sel);
+                        nd.vm.visList.push(sh);
+                    });
+
+        });
+
+    } else if(TEST_MODE == "foot"){
+
+        d3.select("#selParams").style("visibility","hidden");
+
+        var params = {};
+
+        //if params in url, take it, else use hard coded params
+        var vars = [], hash;
+        var q = document.URL.split('?')[1];
+        if(q != undefined){
+            q = q.split('&');
+            for(var i = 0; i < q.length; i++){
+                hash = q[i].split('=');
+                vars[hash[0]] = hash[1];
+            }
+
+            for(var v in vars){
+                params[v] = vars[v];
+            }
+        }
+
+        if((!params.match && !params.mid) || !params.tid || !params.agg || !params.f){
+            console.log("at least 1 invalid param -> loading hard-coded data");
+
+            //2009 barca
+            var BARCA_MID = [
+                294719,294732,294742,294753,294764,294775,
+                294784,294794,294804,294816,294828,294843,
+                294855,294868,294881,294896,294908,294922,
+                294933,294950,294961,294971,294982,294992,
+                295002,295011,295021,295030,295040,295049,
+                295059,295068,295078,295087,295097,295106,295116,295125];
+
+            //3-66:55
+            //12-87:11
+            //14-90:59
+            //17-84:13
+            //18-55:12 !!!!!
+            //19-88:50 !
+            //23-9:00
+            //26-22:52 !!
+            //36-57:4 !
+
+
+
+            params.mid = BARCA_MID[7];
+            params.tid = 178;
+            params.agg = 0;//0: this match, 1: season
+            params.folder = "barca";
+
+        }
+
+        //load a football data file
+        var fileName;
+        if(!params.match){
+            fileName = "./data/"+params.f+"/dumpData_t"+params.tid+"_m"+params.mid+"_agg"+params.agg+".json";
+        }
+        else{
+
+            params.match = params.match.split("%22").join("\"");
+            params.match = params.match.split("%20").join(" ");
+
+            params.match = JSON.parse(params.match);
+            fileName = "./data/"+params.f+"/dumpData_t"+params.tid+"_m"+params.match.mid+"_agg"+params.agg+".json";
+        }
+
+        d3.json(fileName, function(_data) {
+            if(params.match != undefined){
+                _data.matchInfos.comp_name = params.match.comp;
+                _data.matchInfos.date = params.match.date;
+                _data.matchInfos.score_away = params.match.scoreAway;
+                _data.matchInfos.score_home = params.match.scoreHome;
+                _data.matchInfos.home_name = params.match.home_name;
+                _data.matchInfos.away_name = params.match.away_name;
+            }
+            var data = new Data(_data);
+            data.init();
+        });
+    }
+
+</script>
+</body>
+</html>

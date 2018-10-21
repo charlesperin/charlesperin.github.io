@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Assessing the Readability of Stacked Graphs</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Stacked graphs are a visualization technique popular in casual scenarios for representing multiple time-series. Variations of stacked graphs have been focused on reducing the distortion of individual streams because foundational perceptual studies suggest that variably curved slopes may make it difficult to accurately read and compare values. We contribute to this discussion by formally comparing the relative readability of basic stacked area charts, ThemeRivers, streamgraphs and our own interactive technique for straightening baselines of individual streams in a ThemeRiver. We used both real-world and randomly generated datasets and covered tasks at the elementary, intermediate and overall information levels. Results indicate that the decreased distortion of the newer techniques does appear to improve their readability, with streamgraphs performing best for value comparison tasks. We also found that when a variety of tasks is expected to be performed, using the interactive version of the themeriver leads to more correctness at the cost of being slower for value comparison tasks." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+							class="current"
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/co-authors">CO-AUTHORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+				<a href="./../images/publis/2016_GI_stacked-graphs-teaser.png" class="image featured"><img src="/images/publis/2016_GI_stacked-graphs-teaser.png"/></a>
+			
+			
+
+			
+			<header>
+				<h2>Assessing the Readability of Stacked Graphs</h2>
+				
+				<div class="row authors-grid">
+					<div class="12u">
+						
+						<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://alicethudt.de/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/thudt.jpg"/>
+				</div>
+				<p>
+					Alice<br/>
+					Thudt
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://research.jagoda.ca/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/walny.jpg"/>
+				</div>
+				<p>
+					Jagoda<br/>
+					Walny
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://charlesperin.net" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://innovis.cpsc.ucalgary.ca/Publications/FatemeRajabiyazdi" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/rajabiyazdi.jpg"/>
+				</div>
+				<p>
+					Fateme<br/>
+					Rajabiyazdi
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://www.lindsaymacdonald.net/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/macdonald.jpg"/>
+				</div>
+				<p>
+					Lindsay<br/>
+					MacDonald
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/vardeleon.jpg"/>
+				</div>
+				<p>
+					Riane<br/>
+					Vardeleon
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://saul.cpsc.ucalgary.ca/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/greenberg.jpg"/>
+				</div>
+				<p>
+					Saul<br/>
+					Greenberg
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="http://pages.cpsc.ucalgary.ca/~sheelagh/" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/carpendale.jpg"/>
+				</div>
+				<p>
+					Sheelagh<br/>
+					Carpendale
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+					</div>
+				</div>
+				<p>Stacked graphs are a visualization technique popular in casual scenarios for representing multiple time-series. Variations of stacked graphs have been focused on reducing the distortion of individual streams because foundational perceptual studies suggest that variably curved slopes may make it difficult to accurately read and compare values. We contribute to this discussion by formally comparing the relative readability of basic stacked area charts, ThemeRivers, streamgraphs and our own interactive technique for straightening baselines of individual streams in a ThemeRiver. We used both real-world and randomly generated datasets and covered tasks at the elementary, intermediate and overall information levels. Results indicate that the decreased distortion of the newer techniques does appear to improve their readability, with streamgraphs performing best for value comparison tasks. We also found that when a variety of tasks is expected to be performed, using the interactive version of the themeriver leads to more correctness at the cost of being slower for value comparison tasks.</p>
+			</header>
+			
+			<div class="row">
+				<div class="4u 12u(mobile)">
+					<div id="icon-legend" class="icon-horizontal">
+						
+						<a href="https://hal.inria.fr/hal-01587962/document" class="icon">
+							<img src="/images/icon/icon_pdf.png"/>
+							Download the document
+						</a>
+						
+						
+						
+						<a href="/publis/2016_GI_stacked-graphs.bib" class="icon">
+							<img class="icon" src="/images/icon/icon_bib.png"/>
+							Download the bibtex
+						</a>
+						
+						
+						
+						
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="12u style='margin: auto'">
+					
+				</div>
+			</div>
+			
+			
+			
+			
+						
+			
+
+			<section>
+				
+
+			</section>
+			
+		</article>
+	</div>
+</div>	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Oct. 19, 2018
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->

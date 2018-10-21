@@ -1,0 +1,15 @@
+{
+	name: {
+		first: Charles,
+		last: Perin
+	},
+	job: {
+		position: Assistant Professor of Computer Science,
+		affiliation: {
+			details: "Department of Computer Science<br/>Office 552, Engineering and Computer Science (ECS) building<br/>University of Victoria<br/>Victoria, British Columbia, Canada<br/><br/>cperin@uvic.ca<span style='float: right'>(+1) 250 472 5783</span>",
+			name: "University of Victoria",
+			href: "http://www.uvic.ca",
+			logo: "/images/logo/UVic_vert_bk.svg"
+		}
+	}
+}

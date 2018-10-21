@@ -1,0 +1,34 @@
+<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+{% assign authors_list = authors_list | uniq %}
+{% for a in authors_list %}
+	{% assign loopindex = forloop.index | modulo: 6 %}
+	{% if loopindex == 1 %}
+		<div class="row">
+	{% endif %}
+	
+	{% for people in site.data.people %}
+		{% if people.alias == a %}
+			{% assign author = people %}
+			{% capture author_pic %}/images/people/{{author.alias | downcase}}.jpg{% endcapture %}
+		{% endif %}
+	{% endfor %}
+	
+	<div class="2u 4u(mobile)">
+			<a href="{{ author.url }}" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="{{ author_pic }}"/>
+				</div>
+				<p>
+					{{author.first}}<br/>
+					{{author.last}}
+				</p>
+			</a>
+	</div>
+	
+	{% if loopindex == 0 or forloop.last %}
+		</div>
+	{% endif %}
+{% endfor %}
