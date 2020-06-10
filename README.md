@@ -23,6 +23,7 @@ Local server at: http://127.0.0.1:4000/
 
 ### Deploy website
 - Comment the "demo" folder from the exclude list in \_config.yml
+- delete \_site folder
 - compile with:
 > bundle exec jekyll serve watch --future
 - copy content of \_site/ repo to github local folder
