@@ -1,0 +1,1808 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Physicalization Design Process with Kirigami Physicalization</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="In her PhD thesis, Foroozan Daneshzand introduced and investigated the KiriPhys technique to physicalize objects using paper-cutting techniques. Through a series of projects, we could then use this technique to investigate design processes for creating data physicalizations and artwork, to empirically characterize the data physicalization authoring process, and to identify and explore the role of feedforward in data physicalization authoring tools." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/supervision">SUPERVISION</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/collaborators">COLLABORATORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+			<a href="./../images/projects/kiriphys-teaser.png" class="image featured"><img src="/images/projects/kiriphys-teaser.png"/></a>
+			
+			
+			<header style="margin-bottom: 9em;">
+				<h2>Physicalization Design Process with Kirigami Physicalization</h2>
+				
+			<div class="row authors-grid">
+				<div class="12u">
+					<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0009-0001-8395-8948" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/daneshzand.jpg"/>
+				</div>
+				<p>
+					Foroozan<br/>
+					Daneshzand
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-7324-9363" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-5127-9780" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/carpendale.jpg"/>
+				</div>
+				<p>
+					Sheelagh<br/>
+					Carpendale
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/singhgrewal.jpg"/>
+				</div>
+				<p>
+					Grewal<br/>
+					Singh
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-0363-8072" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/losev.jpg"/>
+				</div>
+				<p>
+					Tatiana<br/>
+					Losev
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0003-1915-9663" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/warke.jpg"/>
+				</div>
+				<p>
+					Bhairavi<br/>
+					Warke
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+				</div>
+			</div>
+				
+				<p>In her PhD thesis, Foroozan Daneshzand introduced and investigated the KiriPhys technique to physicalize objects using paper-cutting techniques. Through a series of projects, we could then use this technique to investigate design processes for creating data physicalizations and artwork, to empirically characterize the data physicalization authoring process, and to identify and explore the role of feedforward in data physicalization authoring tools.</p>
+			</header>
+			
+			
+			
+			
+			
+			
+			
+						
+				<section>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>KiriPhys</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">KiriPhys is a new type of data physicalization based on kirigami, a traditional Japanese art form that uses paper-cutting. Within the kirigami possibilities, we investigate how different aspects of cutting patterns offer opportunities for mapping data to both independent and dependent physical variables. As a first step towards understanding the data physicalization opportunities in KiriPhys, we conducted a qualitative study in which 12 participants interacted with four KiriPhys examples. Our observations of how people interact with, understand, and respond to KiriPhys suggest that KiriPhys: 1) provides new opportunities for interactive, layered data exploration, 2) introduces elastic expansion as a new sensation that can reveal data, and 3) offers data mapping possibilities while providing a pleasurable experience that stimulates curiosity and engagement.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-ex0.png" class="image"><img src="/images/projects/kiriphys-ex0.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Four KiriPhys Examples</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>KiriPhys Foundations</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">We explored how data can be mapped in KiriPhys by describing the variables that are available in KiriPhys to encode data. As the first step, we explored the distinguishable ways that one cut can be placed on paper. A single cut is comparable to a single visual mark in that it can also be a point, a line, or an area. Single cuts do not have value or color but can be varied in shape, position, size, and orientation.</p>
+											
+										
+											
+											
+												<p class="text-">We then generalized to more than one cut and explore how making two cots affects the data mapping possibilities. With more than one cut, new, KiriPhys-specific variables can be used. Once there are more than one cut, we can use joints and loops.</p>
+											
+										
+											
+											
+												<p class="text-">A cut pattern consists of cut lines (formed by alternating cuts and joints) arranged in a concentric or parallel manner. Varying the width of joints will affect the length of the cuts. The rings (for concentric cut lines) or stripes (for parallel cut lines) of solid material between two cut lines are called loops, and the width of these loops can be varied. The pattern has an inner loop of a given shape and size, as well as an outer loop that also has a given shape and size. All these variables affect the cut pattern’s expansion amount, direction, and texture that are revealed upon interactively pushing or pulling the cut pattern.</p>
+											
+										
+											
+											
+												<p class="text-"><b>Independent</b> KiriPhys variables are those supporting direct data mappings, i.e. quantitative parameters of the cut pattern that can directly encode data values. Note that although cut patterns can be varied using traditional independent visual variables such as colour, position, size and orientation, we do not detail these since they behave similarly to their visual variable counterparts. We identified six independent KiriPhys cut pattern variables:<br/> - The <i>overall shape</i> of a cut pattern can be regular or irregular. The overall shape depends on the shape of the inner loop and the shape of the outer loop. In-between loops are interpolations between the inner and the outer loop of the cut pattern.<br/> - The <i>number of joints</i> of a loop is equal to the number of cuts in that loop. It is countable and can vary between loops.<br/> - The <i>width of joints</i> of a loop is the amount of solid material between two consecutive cuts of a loop. It is measurable and can vary both within a loop and between loops.<br/> - The <i>number of loops</i> is the number of solid material loops in the cut pattern. It is countable.<br/> - The <i>width of loops</i> is the amount of space that separates two consecutive cut lines. It is measurable, and can vary between loops.<br/> - The <i>position</i> of cut-pattern is the position on the KiriPhys surface on which the cut-pattern is located.<br/> - The <i>orientation</i> of cut-pattern is the alignment of the cut-lines in a cut-pattern.</p>
+											
+										
+											
+											
+												<p class="text-"><b>Dependent</b> KiriPhys variables are varied through changes in the independent variables from the previous section. They can be used to represent data values; however, the mappings are not as straightforward and quantitative as they are with independent variables. We identified seven dependent KiriPhys variables:<br/> - The <i>size of inner loop</i> and <i>size of outer loop</i> describe the 2D size of the first and last loop of a cut pattern. While data can be assigned to either the inner or outer loop, the other one's size may be influenced by such things as the size and width of the loops.<br/> - The <i>amount of expansion</i> captures the height and volume of a cut pattern when fully expanded. This is influenced by the flexibility of the material and the variations in the cut pattern’s independent variables: a smaller number of joints and/or narrower joints leads to more expansion, while a smaller number of loops and/or narrower loops leads to less expansion.<br/> - The <i>direction of expansion</i> is the direction in which the cut pattern can expanded. Regular concentric cut patterns can be expanded upward, downward, and to some extent obliquely. The direction of expansion of a cut pattern is dependent on the influenced by cut lines and on the width of loops.<br/> - The <i>form of expansion</i> is the 3D shape that is formed by the cut pattern when expanded. It is dependent on the width of loops, which can vary along the cut pattern: wider loops make it thicker while narrower loops constrict it.<br/> - The <i>elasticity of expansion</i> refers to the force one needs to apply to the cut pattern for it to expand to the fullest amount. A cut pattern holding more and thicker joints is harder to expand than one with fewer and narrower joints.<br/> - The <i>density of texture</i> of the expanded cut pattern is dependent on the number of joints and the width of joints. More and/or wider joints result in a denser texture, whereas fewer and narrower joints result in a more open pattern. </p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-core-01.png" class="image"><img src="/images/projects/kiriphys-core-01.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>KiriPhys variables for single independent cuts</h3>
+												</header>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-core-02.png" class="image"><img src="/images/projects/kiriphys-core-02.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>KiriPhys variables for two cuts</h3>
+												</header>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-core-03.png" class="image"><img src="/images/projects/kiriphys-core-03.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Joints, loops and cuts</h3>
+												</header>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-core-04.png" class="image"><img src="/images/projects/kiriphys-core-04.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Variations in loop and joint</h3>
+												</header>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-core-05.png" class="image"><img src="/images/projects/kiriphys-core-05.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Summary of kiriPhys variables</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-fulltable.png" class="image"><img src="/images/projects/kiriphys-fulltable.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Independent and dependent KiriPhys variables and their properties</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>KiriPhys Exhibit Pieces</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">KiriPhys installations were featured in a larger exhibit called Data Reflections, focusing on data in art, showing deaths during the heat waves in BC in 2021, the total and per-capita CO2 emissions of big emitting countries, and a timeline of major emitting countries.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-ex5.png" class="image"><img src="/images/projects/kiriphys-ex5.png"/></a>
+												
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-ex6.png" class="image"><img src="/images/projects/kiriphys-ex6.png"/></a>
+												
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-ex7.png" class="image"><img src="/images/projects/kiriphys-ex7.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Data Physicalization Design Process</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Leveraging KiriPhys, we studied the dynamics of the physicalization design process, to understand how physicalization designers navigate, iterate, and make decisions throughout their creative workflows. We conducted an exploratory qualitative study, observing physicalization/visualization experts design KiriPhys both freely and using a technology probe. From analysing the gathered data, we discovered an interactive data physicalization design process formed of six activities, characterized by non-linear and highly iterative movements between them, quite different from the predominately linear models currently in use. A key observed activity within this process is the concept of feedforward, which highlights the designer’s proactive forward-thinking when making design choices, considering the physical aspects of the results. Our fndings suggest strategies for digitally supporting the interactive data physicalization process.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-designprocess.png" class="image"><img src="/images/projects/kiriphys-designprocess.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Empirically-derived data physicalization design process</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Supporting Feedforward in Data Physicalization Authoring Tools</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">One of the key aspects of the design process of data physicalization authoring is that unlike digital visualization, physicalization design introduces structural and material uncertainties, which require immediate feedback and often rapid iteration. This makes physicalization design a speculative, labor-intensive, and expertise-dependent activity. While speculative reasoning can be central to physicalization, authoring tools remain scarce and there is a lack of computational support that can help in anticipating physicalization outcomes. We explore how feedforward mechanisms (predictive features) might help physicalization designers anticipate post-fabrication qualities like tactile feel and expandability before fabrication, by iteratively developing and studying DataCuts, a physicalization authoring tool for designing Kirigami-based data physicalizations. Our study findings show that DataCuts' simple feedforward functionalities can inform design decisions, shape people's understanding of physical properties and encourage tactile representation over conventional mappings. Building on these results, we discuss implications for designing data physicalization support tools that integrate feedforward.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/kiriphys-feedforward.png" class="image"><img src="/images/projects/kiriphys-feedforward.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>DataCuts: A Data Physicalization Authoring Tool that Supports Feedforward</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+				</section>
+			
+			
+			<section>
+				
+
+			</section>
+			
+			
+			<section>
+				
+				
+				
+			</section>
+			
+			
+			
+			
+			<section>
+				<h3>Project Publications</h3>
+				
+				
+				
+				
+				
+				
+				<ul id="pub-ul">
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2025_GI_feedforward-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+					<div class="pub-type fullconf">GI</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Exploring Feedforward in Data Physicalization Authoring Tools: Supporting Design Exploration Before Fabrication</span>
+	<span class="publication-proceedings">Proceedings of the Graphics Interface Conference (GI 2025), June 2025, Kelowna, Canada. Canadian Information Processing Society. 2025.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2025_GI_feedforward.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2025_TEI_physicalizationprocess-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+					<div class="pub-type fullconf">TEI</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Grewal Singh, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Tatiana Losev, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Designing with Data: Supporting Design Processes in Physicalization Construction</span>
+	<span class="publication-proceedings">Proceedings of the Conference on the Conference on Tangible, Embedded, and Embodied Interaction (TEI 2025), March 2025, Bordeaux, France. ACM. 2025.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2025_TEI_physicalizationprocess.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2024_VISAP_shreddedlives-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+					<div class="pub-type fullconf">VISAP</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Design Process of 'Shredded Lives': An Illustrated Exploration</span>
+	<span class="publication-proceedings">IEEE VIS 2024 Arts Program Annotated Portfolios, online. IEEE. 2024.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2024_VISAP_shreddedlives.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2023_GI_climate_stories-poster-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type poster">GI</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Unfolding Climate Stories: Kirigami Data Art in the Wild</span>
+	<span class="publication-proceedings">GI 2023 posters, May 2023, Victoria, BC, Canada. Canadian Information Processing Society. 2023.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2023_GI_climate_stories-poster.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2023_VIS_kiriphys-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+					<div class="pub-type journal">TVCG</div>
+				
+				
+				
+					<div class="pub-type fullconf">VIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">KiriPhys: Exploring New Data Physicalization Opportunities</span>
+	<span class="publication-proceedings">IEEE Transactions on Visualization and Computer Graphics (TVCG / Proc. VIS '22). IEEE. 2023.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2023_VIS_kiriphys.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2022_VIS_kiriphys_viz4climate-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type workshop">Viz4Climate</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Using KiriPhys to Show Expanding Carbon Emissions</span>
+	<span class="publication-proceedings">Proceedings of the IEEE VIS 2022 workshop: Viz4Climate, Oklahoma City, USA. 2022.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2022_VIS_kiriphys_viz4climate.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/kiriphys"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2020_VIS_kiriphys-poster-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type poster">VIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Foroozan Daneshzand, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bhairavi Warke, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sheelagh Carpendale
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Physicalization Inspired by Kirigami</span>
+	<span class="publication-proceedings">IEEE VIS 2020 Electronic Conference Proceedings, Virtual. IEEE. 2020.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2020_VIS_kiriphys-poster.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			<a href="https://inria.hal.science/hal-05514373v1/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</ul>
+			</section>
+		</article>
+	</div>
+</div>
+	
+	
+	
+	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Feb. 27, 2026
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->

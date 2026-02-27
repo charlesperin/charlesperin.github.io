@@ -1,0 +1,1732 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>(Immersive) Visualization for Running</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Running is a popular activity that is becoming increasingly data-driven. However, existing wearable technologies to support runners are limited. For example, smartwatches are small and hard to read while running. In this project, we look at how we can augment the running experience with first-person, egocentric visualizations." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/supervision">SUPERVISION</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/collaborators">COLLABORATORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+			<a href="./.." class="image featured"><img src=""/></a>
+			
+			
+			<header style="margin-bottom: 9em;">
+				<h2>(Immersive) Visualization for Running</h2>
+				
+			<div class="row authors-grid">
+				<div class="12u">
+					<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0001-7707-0494" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/liang.jpg"/>
+				</div>
+				<p>
+					Ang (Leon)<br/>
+					Li
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-7324-9363" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-7311-3693" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/demartini.jpg"/>
+				</div>
+				<p>
+					Gianluca<br/>
+					Demartini
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0003-1954-5441" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/viller.jpg"/>
+				</div>
+				<p>
+					Stephen<br/>
+					Viller
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-8844-8576" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/knibbe.jpg"/>
+				</div>
+				<p>
+					Jarrod<br/>
+					Knibbe
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-9732-4874" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/cordeil.jpg"/>
+				</div>
+				<p>
+					Maxime<br/>
+					Cordeil
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/kashanj.jpg"/>
+				</div>
+				<p>
+					Sarina<br/>
+					Kashanj
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/wangxiyao.jpg"/>
+				</div>
+				<p>
+					Xiyao<br/>
+					Wang
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/elshabasi.jpg"/>
+				</div>
+				<p>
+					Ahmed<br/>
+					Elshabasi
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/yaolijie.jpg"/>
+				</div>
+				<p>
+					Lijie<br/>
+					Yao
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-2948-6417" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/isenbergp.jpg"/>
+				</div>
+				<p>
+					Petra<br/>
+					Isenberg
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-6793-3062" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/willett.jpg"/>
+				</div>
+				<p>
+					Wesley<br/>
+					Willett
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+				</div>
+			</div>
+				
+				<p>Running is a popular activity that is becoming increasingly data-driven. However, existing wearable technologies to support runners are limited. For example, smartwatches are small and hard to read while running. In this project, we look at how we can augment the running experience with first-person, egocentric visualizations.</p>
+			</header>
+			
+			
+			
+			
+			
+			
+			
+						
+				<section>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="major">
+													<h2>Towards Immersive Visualizations for Running</h2>
+												</header>
+											
+										
+											
+											
+												<p class="text-">We investigated the current research on in-situ visualizations for running: visualizations about data that are referred to during the running activity. We analyzed 47 papers from 33 Human-Computer Interaction and Visualization venues and identified six dimensions of a design space of in-situ running visualizations. Our analysis of this design space highlights an emerging trend: a shift from on-body, peripersonal visualizations (i.e., in the space within direct reach, such as visualizations on a smartwatch or a mobile phone display) towards extrapersonal displays (i.e., in the space beyond immediate reach, such as visualizations in immersive augmented reality displays) that integrate data in the runner's surrounding environment.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/runningvis-02.png" class="image"><img src="/images/projects/runningvis-02.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-">
+													<h3>The design space of in-situ running visualizations based on our scoping survey of 47 papers</h3>
+												</header>
+											
+										
+											
+											
+												<header class="text-center">
+													<h4>(interactive version available at	  <a href="https://runningwithdata.github.io/">https://runningwithdata.github.io/</a>)</h4>
+												</header>
+											
+										
+											
+											
+												<p class="text-">We explored this opportunity by conducting a series of workshops with 10 active runners, eliciting design concepts for running visualizations and interactions beyond conventional 2D displays. We found that runners show a strong interest for visualization designs that favor more context-aware, interactive, and unobtrusive experiences that seamlessly integrate with their run. These finding inform a set of design considerations for future immersive running visualizations and highlight directions for further research.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/runningvis-03.png" class="image"><img src="/images/projects/runningvis-03.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Speculative designs mapped to Previc's Action Spaces</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="major">
+													<h2>Immersive Pace Visualizations</h2>
+												</header>
+											
+										
+											
+											
+												<p class="text-">We investigated the use of mixed reality visualizations to help pace tracking for interval running. We introduced three immersive visual designs to support pace tracking. Our designs leverage two properties afforded by mixed reality environments to display information: the space in front of the user and the physical environment to embed pace visualization. We reported on the first design exploration and controlled study of mixed reality technology to support pacing tracking during interval running on an outdoor running track. Our results show that mixed reality and immersive visualization designs for interval training offer a viable option to help runners (a) maintain regular pace, (b) maintain running flow, and (c) reduce mental task load.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/runningvis-01.png" class="image"><img src="/images/projects/runningvis-01.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Three immersive visualizations on the spectrum of situatedness</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="major">
+													<h2>Visualizations on Smart Watches</h2>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Besides immersive technologies, there is already a lot to do regarding how data is being leveraged on existing technologies when running.In fact, and although research tells us that visualizations are a good alternative to text on smart watches, we know little about how visualizations can help in realistic running scenarios. We conducted a study in which 20 runners completed running-related tasks on an outdoor track using both text and visualizations. Our results show that runners are 1.5 to 8 times faster in completing those tasks with visualizations than with text, prefer visualizations to text, and would use such visualizations while running, if available on their smart watch.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/runningvis-04.png" class="image"><img src="/images/projects/runningvis-04.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Visualizing running data on smart watches</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="major">
+													<h2>What do runners need?</h2>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Interestingly, we know little about what information runners need access to and for what purpose, while they are running. We looked into creating an initial corpus of real-world recordings that pair egocentric video, biometrics, and think-aloud observations of running activities, among others. With the increasing use of tracking and recording devices, such as smartwatches and head-mounted displays, more and more data is available in real-time about a person's activity and the context of the activity. However, not all data will be relevant all the time. Instead, athletes have information needs that change throughout their activity depending on the context and their performance. To address this challenge, we collected a diverse corpus of information needs paired with contextualizing audio, video, and sensor data.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/runningvis-06.png" class="image"><img src="/images/projects/runningvis-06.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Capturing Information Needs and Context</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Through this project, we identified a first set of research challenges and design considerations that highlight the difficulties of visualizing those real data needs in-context. We also built a a prototype tool for browsing, aggregating, and analyzing this corpus.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/runningvis-05.png" class="image"><img src="/images/projects/runningvis-05.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Prototype Tool for Exploring the Corpus of Contextualized Data Needs</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+				</section>
+			
+			
+			<section>
+				
+
+			</section>
+			
+			
+			<section>
+				
+					
+						<h3>Videos</h3>
+					
+				
+				
+				
+					
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://www.youtube.com/embed/3IlTz_JYoEI" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+				
+					
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://www.youtube.com/embed/QmWZ3rzzz60" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+				
+			</section>
+			
+			
+			
+			
+			<section>
+				<h3>Project Publications</h3>
+				
+				
+				
+				
+				
+				
+				<ul id="pub-ul">
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/runningvis"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2026_VIS_running_with_data-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+					<div class="pub-type journal">TVCG</div>
+				
+				
+				
+					<div class="pub-type fullconf">VIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Ang (Leon) Li, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Gianluca Demartini, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Stephen Viller, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jarrod Knibbe, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Maxime Cordeil
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Running with Data: A Survey of the Current Research and a Design Exploration of Future Immersive Visualisations</span>
+	<span class="publication-proceedings">IEEE Transactions on Visualization and Computer Graphics (TVCG / Proc. VIS '25). IEEE. 2026.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2026_VIS_running_with_data.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a href="https://runningwithdata.github.io/" class="icon">
+				<img src="/images/icon/icon_website.png"/>
+			</a>
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/runningvis"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2025_VIS_MR_Running-poster-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type poster">VIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Ang (Leon) Li, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jarrod Knibbe, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Stephen Viller, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Gianluca Demartini, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Maxime Cordeil
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Embedded and Situated Visualisation in Mixed Reality to Support Interval Running - A Research Highlight </span>
+	<span class="publication-proceedings">IEEE VIS 2025 Electronic Conference Proceedings, Vienna, Austria. IEEE. 2025.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2025_VIS_MR_Running-poster.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			<a href="https://inria.hal.science/hal-05514549v1/document" class="icon">
+				<img src="/images/icon/icon_poster.png"/>
+			</a>
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/runningvis"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2025_CGF_runningMR-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+					<div class="pub-type journal">CGF</div>
+				
+				
+				
+					<div class="pub-type fullconf">Eurovis</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Ang (Leon) Li, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Jarrod Knibbe, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Gianluca Demartini, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Stephen Viller, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Maxime Cordeil
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Embedded and Situated Visualisation in Mixed Reality to Support Interval Running</span>
+	<span class="publication-proceedings">Computer Graphics Forum (CGF / Proc. of Eurovis '25). The Eurographics Association & John Wiley & Sons, Ltd. 2025.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2025_CGF_runningMR.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			<a href="https://www.youtube.com/watch?v=3IlTz_JYoEI" class="icon">
+				<img class="icon" src="/images/icon/icon_movie_clap.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/runningvis"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2024_VIS_smartwatchrunning-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+					<div class="pub-type fullconf">VIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sarina Kashanj, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Xiyao Wang, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Visualizations on Smart Watches while Running: It Actually Helps!</span>
+	<span class="publication-proceedings">IEEE VIS Short Papers (Proc. VIS '24). IEEE. 2024.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2024_VIS_smartwatchrunning.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			<a href="https://www.youtube.com/watch?v=QmWZ3rzzz60" class="icon">
+				<img class="icon" src="/images/icon/icon_movie_clap.png"/>
+			</a>
+			
+			
+			
+			
+			
+			<a href="https://osf.io/preprints/osf/2fa56" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/runningvis"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2024_VIS_information_needs_altvis-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type workshop">First-Person Visualizations for Outdoor Physical Activities</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Ahmed Elshabasi, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Lijie Yao, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Petra Isenberg, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Wesley Willett
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Collecting Information Needs for Egocentric Visualizations while Running</span>
+	<span class="publication-proceedings">Proceedings of the IEEE VIS 2024 workshop: First-Person Visualizations for Outdoor Physical Activities: Challenges and Opportunities, St. Pete Beach, FL, USA. 2024.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2024_VIS_information_needs_altvis.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			<a href="https://hal.science/hal-04700822v1/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</ul>
+			</section>
+		</article>
+	</div>
+</div>
+	
+	
+	
+	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Feb. 27, 2026
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->

@@ -1,0 +1,1596 @@
+<!DOCTYPE HTML>
+
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Actuated textile-based physicalization with Vismock</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Vismock is a data physicalization technique that combines smocked patterns on textiles with electronics to incorporate color and shape changes, supporting visual and tactile data representation. Our work is mainly motivated by data physicalization challenges about understanding the design space of physical data representations, especially dynamic, actuated, and interactive ones, and determining how to implement these designs. Using Vismock, we developed personal data physicalizations that represent people's progress towards completing tasks, their stress levels over time, and their running activity." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-viewport.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/d3-4.10.2.min.js"></script>
+		
+		<link rel="stylesheet" href="/assets/css/main.css"/>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		
+		
+	</head>
+	
+	<body>
+	
+
+
+<div id="page-wrapper">
+	
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div id="header">
+		
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					
+					
+					
+						<li 
+						
+						>
+						<a href="/index.html">HOME</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/publications">PUBLICATIONS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/research">ACTIVITIES</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/supervision">SUPERVISION</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/collaborators">COLLABORATORS</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/teaching">TEACHING</a>
+						</li>
+					
+						<li 
+						
+						>
+						<a href="/blog">BLOG</a>
+						</li>
+					
+					
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!-- Main -->
+<div id="main-wrapper">
+	<div class="container">
+	
+		<!-- Content -->
+		<article class="box post white">
+			
+			<a href="./../images/projects/vismock-teaser.png" class="image featured"><img src="/images/projects/vismock-teaser.png"/></a>
+			
+			
+			<header style="margin-bottom: 9em;">
+				<h2>Actuated textile-based physicalization with Vismock</h2>
+				
+			<div class="row authors-grid">
+				<div class="12u">
+					<!--
+Params:
+authors_list the list of authors (can contain duplicates, will be uniquified)
+-->
+
+
+	
+	
+		<div class="row">
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0009-0006-4764-9052" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/bakhtiari.jpg"/>
+				</div>
+				<p>
+					Bahare<br/>
+					Bakhtiari
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0000-0002-7324-9363" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/perin.jpg"/>
+				</div>
+				<p>
+					Charles<br/>
+					Perin
+				</p>
+			</a>
+	</div>
+	
+	
+
+	
+	
+	
+	
+	
+	<div class="2u 4u(mobile)">
+			<a href="https://orcid.org/0009-0005-8580-5215" class="image featured">
+				<div class="img-zoom-wrapper">
+					<img src="/images/people/somanath.jpg"/>
+				</div>
+				<p>
+					Sowmya<br/>
+					Somanath
+				</p>
+			</a>
+	</div>
+	
+	
+		</div>
+	
+
+				</div>
+			</div>
+				
+				<p>Vismock is a data physicalization technique that combines smocked patterns on textiles with electronics to incorporate color and shape changes, supporting visual and tactile data representation. Our work is mainly motivated by data physicalization challenges about understanding the design space of physical data representations, especially dynamic, actuated, and interactive ones, and determining how to implement these designs. Using Vismock, we developed personal data physicalizations that represent people's progress towards completing tasks, their stress levels over time, and their running activity.</p>
+			</header>
+			
+			
+			
+			
+			
+			
+			
+						
+				<section>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>What is Vismock (Visualization + Smocking)?</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<p class="text-">Data physicalization is a research area that explores representing data attributes through manipulating the geometric and physical properties of tangible objects. Vismock is a data physicalization approach that leverages a fabric manipulation technique called 'smocking'. Vismock supports the creation of interactive and dynamic data physicalizations by extending the smocking technique with programmable components such as thermochromic pigments and shape memory alloys. Using a research-through-design methodology, we developed an initial design space for Vismock that shows how data can be represented using visual and tactile variables, as well as the affordances of Vismock. We demonstrated the generative power of our design space through four exemplars, created using Vismock. We use these exemplars to discuss the advantages and limitations of Vismock as a tool for data physicalization.</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://www.youtube.com/embed/nOAM2OOFBk4" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>What smocking is about</h3>
+												</header>
+											
+										
+											
+											
+												<header class="text-center">
+													<h4><i>(the one with textiles, not cigarettes)</i></h4>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Actuation</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">The primary component of Vismock is an augmented smocked pattern - a smocking display. To create a smocking display, we combine the American smocked pattern with programmable electronics to actuate textile shape and color. To create a smocked pattern, small stitches are sewn into the fabric using specific patterns. Such stitching can be done either manually or using a sewing machine. A smocked pattern can be developed using different types of fabrics such as cotton and linen. In our implementation, a smocking display is composed of a number of cells. A single cell within the smocking display is described as a square grid of a specific dimension that has a stitch design, and can be connected to a circuit that controls its color and shape.</p>
+											
+										
+											
+											
+												<p class="text-">A smocking display consists of a fabric layer, which we refer to as the heater layer, containing the electronics and the circuit, and a smocked pattern layer. The heater layer has two faces. On the front face, we sew conductive thread patterns that act like heating elements. The back face of the heater layer acts as a breadboard and connects to different parts of that heater layer using copper tape. To power and control our heater layer, we use an off-the-shelf microcontroller, Arduino Mega. MOSFET is used to control the current flow from an external power source to the circuit. To power our circuit, we use 3.7 volt rechargeable Li-Ion batteries with capacities higher than 1000mAh.</p>
+											
+										
+											
+											
+												
+												<a href="/images/projects/vismock09.png" class="image"><img src="/images/projects/vismock09.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Vismock Implementation</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h4>Color Actuation</h4>
+												</header>
+											
+										
+											
+											
+												<p class="text-">To support color actuation, we mix thermochromic pigments (with a variety of activation temperatures: Black-Colorless (38 C), Red-Yellow (31 C), and Green-Yellow (25 C))1 with white dye and paint the mix on the fabric surface. The thermochromic pigment is then actuated using the heater layer.</p>
+											
+										
+											
+											
+												<p class="text-">Thermochromic pigments typically enable a material to have two states – an original base color, and a changed color when applying heat over a certain threshold. When the material cools to a temperature below the threshold, it returns to its base color.</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/vismock07.png" class="image"><img src="/images/projects/vismock07.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Color actuation (binary and continuous)</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h4>Shape Actuation</h4>
+												</header>
+											
+										
+											
+											
+												<p class="text-">To support shape actuation, we use shape memory alloys (SMAs), such as shape memory wires and springs. These types of SMAs have a trained state. Applying current and heating the wires above their activation temperature causes these wires to go back to their trained state. to expand, we use NiTi shape memory alloy with wire trained state, of size 0.5mm, and transition temperature of 45C1. To compress, we use NiTi shape memory alloy with helical spring trained state, of size 0.5mm, a mandrel size of 8mm, a pitch of Wire size4, and a transition temperature of 45C2.</p>
+											
+										
+											
+											
+												<p class="text-">By setting the state of current flow to ‘on’ or ‘off’, or by controlling the time interval during which the current flows, we can either reach a specific shape state or animate an expansion or compression sequence.</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/vismock08.png" class="image"><img src="/images/projects/vismock08.png"/></a>
+												
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Shape actuation (compression and expansion)</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												
+<!-- input:
+_video_name
+ -->
+
+
+
+
+
+
+	<div class="video-container video-container-16x9">
+	<iframe src="https://www.youtube.com/embed/JaCWfUq0ftw" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+
+											
+										
+											
+											
+												<header class="text-center">
+													<h3>Vismock actuation in action</h3>
+												</header>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h3>Design Space</h3>
+												</header>
+											
+										
+											
+											
+												<p class="text-">We developed the Vismock design space that consists of three parts: independent variables, dependent variables, and affordances.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h4>Independent variables</h4>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Independent variables are aspects of smocked patterns that can be modified independently from other parameters. They can be visual (cell size, number of cells, pattern kind and cell color) or tactile (cell stitch state, and cell temperature).</p>
+											
+										
+											
+											
+												<p class="text-">Each independent variable can be controlled either manually while making the smocking display, or by manual interaction or using electronics within the fabricated smocking display.</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="6u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/vismock-ds01.png" class="image"><img src="/images/projects/vismock-ds01.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="8u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/vismock-ds02.png" class="image"><img src="/images/projects/vismock-ds02.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h4>Dependent variables</h4>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Dependent variables are aspects of smocked patterns that are modified by varying independent variables. The dependent visual variables we explored are shape, shape size, shape position, and dynamic cell color. Shape in Vismock corresponds to each repeating unit of the smocked pattern and depends on the pattern kind. Shape size and position correspond to the characteristics of that unit within the entire pattern.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<p class="text-">Dynamic cell color corresponds to the current color of the thermochromic pigments applied to the cell’s surface and depends on cell temperature. Shape depends on pattern kind and cell stitch state, while size and position depend on pattern kind, cell stitch state, and the size of the grid structure that the pattern is made from.</p>
+											
+										
+											
+											
+												<p class="text-">The dependent tactile variables we explored are roughness, lay, and compliance. Roughness in Vismock is modified through variations in the fabric caused from changes in shape. Lay depends on the orientation of the rows and columns of the pattern kind. Compliance refers to the capability of the pattern used to be compressed and expanded, which can range from high compliance like honeycomb, to relatively rigid like the flower shaped pattern, and depends on pattern kind and cell stitch state.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="8u 12u(mobile)">
+									<section>
+										
+											
+											
+												<header class="text-left">
+													<h4>Affordances</h4>
+												</header>
+											
+										
+											
+											
+												<p class="text-">Affordances in Vismock refer to the functional, sensory, physical, and cognitive affordance that when taken together correspond to how data represented using Vismock is being perceived, sensed, and used as a function of independent and dependent variables that represent data.</p>
+											
+										
+											
+											
+												<p class="text-">Functional affordances are design features that help users accomplish tasks. Functional affordances in Vismock encompass the ability of the system to close or open the stitches and to map the color value of a cell to a range of data values, which enables users to visualize quantitative, categorical, and ordinal data.</p>
+											
+										
+											
+											
+												<p class="text-">Sensory affordances are design features that help users sense something in support of cognitive or physical affordances. Sensory affordances in Vismock relates to temperature changes that pertain exclusively to the tactile sense (e.g., feeling data value changes), color changes to the visual sense (e.g., seeing trend), and compliance, lay, and roughness to both tactile and visual senses (e.g., extent of roughness could indicate differences in data values).</p>
+											
+										
+									</section>
+								</div>
+							
+								<div class="4u 12u(mobile)">
+									<section>
+										
+											
+											
+												
+												<a href="/images/projects/vismock-ds03.png" class="image"><img src="/images/projects/vismock-ds03.png"/></a>
+												
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+						<div class="row">
+							
+								<div class="12u 12u(mobile)">
+									<section>
+										
+											
+											
+												<p class="text-">Physical affordances are design features that help users in doing a physical action. Physical affordances in Vismock are about compliance as it helps users compress and expand the smocking display to perform operations such as zooming in and out. Cognitive affordances are design features that help users in knowing something. Cognitive affordances in Vismock relate to lay, compliance, and roughness as they help users in knowing the characteristics of the smocking display. For example, high compliance can enable users to know that the pattern can be compressed and expanded or lay can communicate that there is a trend in the visualized dataset.</p>
+											
+										
+											
+											
+												<p class="text-">Cognitive affordances are design features that help users in knowing something. Cognitive affordances in Vismock relate to lay, compliance, and roughness as they help users in knowing the characteristics of the smocking display. For example, high compliance can enable users to know that the pattern can be compressed and expanded or lay can communicate that there is a trend in the visualized dataset.</p>
+											
+										
+									</section>
+								</div>
+							
+						</div>
+					
+				</section>
+			
+			
+			<section>
+				
+
+			</section>
+			
+			
+			<section>
+				
+				
+				
+			</section>
+			
+			
+			
+			
+			<section>
+				<h3>Project Publications</h3>
+				
+				
+				
+				
+				
+				
+				<ul id="pub-ul">
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/vismock"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2025_VIS_vismock-poster-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type poster">VIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bahare Bakhtiari, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sowmya Somanath
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">VISMOCK: A Programmable Smocking Technique for Creating Interactive Data Physicalization</span>
+	<span class="publication-proceedings">IEEE VIS 2025 Electronic Conference Proceedings, Vienna, Austria. IEEE. 2025.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2025_VIS_vismock-poster.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			<a href="https://inria.hal.science/hal-05514474v1/file/2025_VIS_vismock_poster-poster.pdf" class="icon">
+				<img src="/images/icon/icon_poster.png"/>
+			</a>
+			
+			
+			
+			<a href="https://inria.hal.science/hal-05514474v1/document" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/vismock"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2025_VIS_repeated_actions-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type workshop">Input Visualization</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bahare Bakhtiari, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sowmya Somanath, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Repeated Actions in Fabric Manipulation Crafts as an Opportunity for Input Physicalization</span>
+	<span class="publication-proceedings">Proceedings of the IEEE VIS 2025 Workshop: Envisioning a Research Agenda for Input Visualization, Vienna, Austria. 2025.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2025_VIS_repeated_actions.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			<a href="https://osf.io/bu568/files/kbw89" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/vismock"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2024_DIS_vismock_ephemerality_integration-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type workshop">Physicalization from Theory to Practice</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bahare Bakhtiari, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sowmya Somanath
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Using Ephemerality and Integration with Everyday Objects as Strategies for Improving Personal Data Privacy through VISMOCK</span>
+	<span class="publication-proceedings">Proceedings of the ACM DIS 2024 workshop: Physicalization from Theory to Practice, Copenhagen, Denmark. 2024.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2024_DIS_vismock_ephemerality_integration.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/vismock"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2024_DIS_vismock-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+					<div class="pub-type fullconf">DIS</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bahare Bakhtiari, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sowmya Somanath
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">VISMOCK: A Programmable Smocking Technique for Creating Interactive Data Physicalization</span>
+	<span class="publication-proceedings">Proceedings of the Conference on Designing Interactive Systems (DIS 2024), July 2024, Copenhagen, Denmark. ACM. 2024.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2024_DIS_vismock.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			
+			
+			<a href="https://osf.io/gcy3q" class="icon">
+				<img src="/images/icon/icon_pdf.png"/>
+			</a>
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+					<li class="thumb-list ">
+						<div class="thumbnail">
+	<a class="pull-left" 
+		 
+		href="/projects/vismock"
+					
+		>
+		<div class="img-zoom-wrapper">
+			<img class="thumb-img" src="/images/publis/2023_GI_smart_garments-poster-thumb.png">
+		</div>
+	</a>
+	
+	<div class="thumb-body">
+		
+		<div class="pub-tags">
+			
+	
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<div class="pub-type poster">GI</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+		</div>
+		
+	
+	<span class="publication-authors">
+	
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Bahare Bakhtiari, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author me">
+				
+				
+					Charles Perin, 
+				
+				</span>
+			
+		
+			
+			
+			
+			
+			
+				
+					<span class="author">
+				
+				
+					Sowmya Somanath
+				
+				</span>
+			
+		
+	</span>
+	<span class="publication-title">Investigating the Potential for Smart Garments as Extension for Mobile to Support In-Situ Tasks</span>
+	<span class="publication-proceedings">GI 2023 posters, May 2023, Victoria, BC, Canada. Canadian Information Processing Society. 2023.</span>
+		
+		<div class="icon publi">
+		
+			
+			<a href="/publis/2023_GI_smart_garments-poster.bib" class="icon">
+				<img class="icon" src="/images/icon/icon_bib.png"/>
+			</a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+								
+			
+			
+			
+			<a href="https://inria.hal.science/hal-05514528v1/document" class="icon">
+				<img src="/images/icon/icon_poster.png"/>
+			</a>
+			
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+					</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+				</ul>
+			</section>
+		</article>
+	</div>
+</div>
+	
+	
+	
+	
+	
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								
+									Charles Perin. Last updated on Feb. 27, 2026
+								
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+	</body>
+</html>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-106317179-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Stuff for jsarr tag  -->
+
+
+
+<!-- End Stuff for jsarr tag  -->

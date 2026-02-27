@@ -2962,98 +2962,149 @@
 			color: #333;
 		}
 		
-		.pub-type.conference, 
-		.button.pub-legend.conference,
-		.button.pub-legend.conference:hover{
-			background: #5DA88D;
-			border-color: #5DA88D;
+		.pub-type.fullconf, 
+		.button.pub-legend.fullconf,
+		.button.pub-legend.fullconf:hover{
+			background: #19537A;
+			border-color: #333;
 			color: white;
 		}
 		
-		.pub-type.conference.disabled, 
-		.button.pub-legend.conference.disabled,
-		.button.pub-legend.conference.disabled:hover{
+		.pub-type.fullconf.disabled, 
+		.button.pub-legend.fullconf.disabled,
+		.button.pub-legend.fullconf.disabled:hover{
 			background: white;
-			border-color: #5DA88D;
-			color: #5DA88D;
+			border-color: #333;
+			color: #19537A;
+		}
+		
+		.pub-type.shortconf, 
+		.button.pub-legend.shortconf,
+		.button.pub-legend.shortconf:hover{
+			background: #2E96DB;
+			border-color: #333;
+			color: white;
+		}
+		
+		.pub-type.shortconf.disabled, 
+		.button.pub-legend.shortconf.disabled,
+		.button.pub-legend.shortconf.disabled:hover{
+			background: white;
+			border-color: #333;
+			color: #2E96DB;
+		}
+		
+		.pub-type.pictorial, 
+		.button.pub-legend.pictorial,
+		.button.pub-legend.pictorial:hover{
+			background: #3B9797;
+			border-color: #333;
+			color: white;
+		}
+		
+		.pub-type.pictorial.disabled, 
+		.button.pub-legend.pictorial.disabled,
+		.button.pub-legend.pictorial.disabled:hover{
+			background: white;
+			border-color: #333;
+			color: #3B9797;
+		}
+		
+		.pub-type.bookchapter, 
+		.button.pub-legend.bookchapter,
+		.button.pub-legend.bookchapter:hover{
+			background: #640D5F;
+			border-color: #333;
+			color: white;
+		}
+		
+		.pub-type.bookchapter.disabled, 
+		.button.pub-legend.bookchapter.disabled,
+		.button.pub-legend.bookchapter.disabled:hover{
+			background: white;
+			border-color: #333;
+			color: #640D5F;
 		}
 		
 		.pub-type.workshop, 
 		.button.pub-legend.workshop,
-		.button.pub-legend.workshop:hover,
-		.pub-type.abstract, 
-		.button.pub-legend.abstract,
-		.button.pub-legend.abstract:hover,
-		.pub-type.poster, 
-		.button.pub-legend.poster,
-		.button.pub-legend.poster:hover,
-		.pub-type.demo, 
-		.button.pub-legend.demo,
-		.button.pub-legend.demo:hover,
-		.pub-type.contest, 
-		.button.pub-legend.contest,
-		.button.pub-legend.contest:hover{
-			background: #F37248;
-			border-color: #F37248;
+		.button.pub-legend.workshop:hover{
+			background: #BB8ED0;
+			border-color: #333;
 			color: white;
 		}
 		
 		.pub-type.workshop.disabled, 
 		.button.pub-legend.workshop.disabled,
-		.button.pub-legend.workshop.disabled:hover,
-		.pub-type.abstract.disabled, 
-		.button.pub-legend.abstract.disabled,
-		.button.pub-legend.abstract.disabled:hover,
+		.button.pub-legend.workshop.disabled:hover{
+			background: white;
+			border-color: #333;
+			color: #BB8ED0;
+		}
+		
+		.pub-type.poster, 
+		.button.pub-legend.poster,
+		.button.pub-legend.poster:hover{
+			background: #D89191;
+			border-color: #333;
+			color: white;
+		}
+		
 		.pub-type.poster.disabled, 
 		.button.pub-legend.poster.disabled,
-		.button.pub-legend.poster.disabled:hover,
+		.button.pub-legend.poster.disabled:hover{
+			background: white;
+			border-color: #333;
+			color: #D89191;
+		}
+		
+		
+		
+		
+		.pub-type.other, 
+		.button.pub-legend.other,
+		.button.pub-legend.other:hover,
+		.pub-type.demo, 
+		.button.pub-legend.demo,
+		.button.pub-legend.demo:hover,
+		.pub-type.patent, 
+		.button.pub-legend.patent,
+		.button.pub-legend.patent:hover,
+		.pub-type.thesis, 
+		.button.pub-legend.thesis,
+		.button.pub-legend.thesis:hover,
+		.pub-type.artwork, 
+		.button.pub-legend.artwork,
+		.button.pub-legend.artwork:hover,
+		.pub-type.contest, 
+		.button.pub-legend.contest,
+		.button.pub-legend.contest:hover{
+			background: #EF759E;
+			border-color: #333;
+			color: white;
+		}
+		
+		.pub-type.other.disabled, 
+		.button.pub-legend.other.disabled,
+		.button.pub-legend.other.disabled:hover,
 		.pub-type.demo.disabled, 
 		.button.pub-legend.demo.disabled,
 		.button.pub-legend.demo.disabled:hover,
+		.pub-type.patent.disabled, 
+		.button.pub-legend.patent.disabled,
+		.button.pub-legend.patent.disabled:hover,
+		.pub-type.thesis.disabled, 
+		.button.pub-legend.thesis.disabled,
+		.button.pub-legend.thesis.disabled:hover,
+		.pub-type.artwork.disabled, 
+		.button.pub-legend.artwork.disabled,
+		.button.pub-legend.artwork.disabled:hover,
 		.pub-type.contest.disabled, 
 		.button.pub-legend.contest.disabled,
 		.button.pub-legend.contest.disabled:hover{
 			background: white;
-			border-color: #F37248;
-			color: #F37248;
-		}
-		
-		.pub-type.chapter, 
-		.button.pub-legend.chapter,
-		.button.pub-legend.chapter:hover,
-		.pub-type.thesis, 
-		.button.pub-legend.thesis,
-		.button.pub-legend.thesis:hover{
-			background: #91A5B1;
-			border-color: #91A5B1;
-			color: white;
-		}
-		
-		.pub-type.chapter.disabled, 
-		.button.pub-legend.chapter.disabled,
-		.button.pub-legend.chapter.disabled:hover,
-		.pub-type.thesis.disabled, 
-		.button.pub-legend.thesis.disabled,
-		.button.pub-legend.thesis.disabled:hover{
-			background: white;
-			border-color: #91A5B1;
-			color: #91A5B1;
-		}
-		
-		.pub-type.patent, 
-		.button.pub-legend.patent,
-		.button.pub-legend.patent:hover{
-			background: #034557;
-			border-color: #034557;
-			color: white;
-		}
-		
-		.pub-type.patent.disabled, 
-		.button.pub-legend.patent.disabled,
-		.button.pub-legend.patent.disabled:hover{
-			background: white;
-			border-color: #034557;
-			color: #034557;
+			border-color: #333;
+			color: #EF759E;
 		}
 		
 		
@@ -3234,6 +3285,7 @@
 		article.co-authors .grid-item  p{
 			line-height: 80%;
 			margin: 0;
+			font-size: 80%;
 		}
 		
 	
@@ -3419,18 +3471,34 @@
 	
 	#activities-visual div.symbol{
 		margin: auto;
-    text-align: center;
-		background: #fff;
+		text-align: center;
+		background: none;
 		visibility: hidden;
 	}
 	
 	#activities-visual div.symbol.review{
-		border-color: #5d5d5d;
+		background: #aaaaaa;
+		border-color: #aaaaaa;
 		visibility: visible;
 	}
 	
 	#activities-visual div.symbol.pc{
-    background: #9f9f9f;
+		border-color: #333;
+		visibility: visible;
+	}
+	
+	#activities-visual div.symbol.trackchair{
+		border-color: #2E96DB;
+		visibility: visible;
+	}
+	
+	#activities-visual div.symbol.steering{
+		border-color: #BB8ED0;
+		visibility: visible;
+	}
+	
+	#activities-visual div.symbol.generalchair{
+		border-color: #EF759E;
 		visibility: visible;
 	}
 	

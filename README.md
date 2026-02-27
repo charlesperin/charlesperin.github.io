@@ -5,6 +5,12 @@ Website available at http://charlesperin.net
 
 ## How To
 
+### Install environment
+Install Ruby and Jekyll:
+- https://jekyllrb.com/docs/installation/windows/
+- 
+- check if installed with jekyll -v
+
 ### Compile
 - Uncomment "demo" from the exclude list on \_config.yml to generate much faster
 
@@ -20,6 +26,8 @@ Local server at: http://127.0.0.1:4000/
 
 ### Install missing gems
 > bundle install
+
+
 
 ### Deploy website
 - Comment the "demo" folder from the exclude list in \_config.yml
@@ -60,6 +68,7 @@ look at demo/dragvispub/index.html
 - add thumbnail in images/publis (400x300)
 - add teaser in images/publis
 - authors are author aliases in the people.csv file
+- check that all the created links work properly (bib, website, pdf, etc..)
 
 ### Organized workshop
 - create post in \_posts/workshops
