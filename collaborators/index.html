@@ -17293,7 +17293,7 @@
 						<div class="row">
 							<div class="4u 12u(mobile)">
 								
-									Charles Perin. Last updated on Feb. 27, 2026
+									Charles Perin. Last updated on Mar. 12, 2026
 								
 							</div>
 						</div>
@@ -17476,6 +17476,8 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
   canvastag.CUT         = 0;
   canvastag.CONTINUE    = 1;
   canvastag.DASHED_LINE = 2;
+  
+  canvastag.DECORATE_RANK_ON_LEFT = false;
 
   canvastag.missingDataStrategy = canvastag.CUT;
 
@@ -18109,199 +18111,6 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
   }
 
 
-  // function to draw one single polygon using the direct pixel access method
-  canvastag.drawOneTeam3 = function(team, ctx, imageData, size, sizeA, sizeH, sizeB, shadowSize){
-    //console.log("drawOneTeam3 "+team.name+" "+team.lastRankedDay);
-    //timeNow = new Date().getTime();
-
-    var tn = Math.ceil(team.name.length/4)*4+1;
-    var day0 = 0;
-    while ((typeof(team.ranks[day0])=='undefined') && day0<this.DAY_NUMBER) day0++;
-
-    var lastrank=day0;
-    var mousein = false;
-    var segCount=0;
-
-    // from left to right, the top of the shape
-    var daystart = day0;
-    prevColor = this.getColorFor(team, day0);
-    var col = new RGBColor(prevColor);
-    var pos0 = this.layout(team, day0);
-    var x0 = Math.round(pos0.x-this.width*(this.START_SLOT)/(this.DAY_NUMBER+this.ADD_SLOT));
-
-    for (var i=x0; i<pos0.x; i++){
-      for (var k=Math.max(0, pos0.y); k<Math.min(this.height, pos0.y+sizeH); k++){
-        var index = 4*(k+i*this.height);
-        imageData.data[index+0] = Math.round(col.r-96*Math.abs(k-pos0.y-sizeH/3)/(sizeH));
-        imageData.data[index+1] = Math.round(col.g-96*Math.abs(k-pos0.y-sizeH/3)/(sizeH));
-        imageData.data[index+2] = Math.round(col.b-96*Math.abs(k-pos0.y-sizeH/3)/(sizeH));
-        imageData.data[index+3] = col.a;
-      }
-      if (shadowSize && shadowSize>0)
-        for (var k=Math.max(0, Math.ceil(pos0.y+sizeH)); k<Math.min(this.height, pos0.y+sizeH+shadowSize); k++){
-          var index = 4*(k+i*this.height);
-          if (imageData.data[index+3]==0) {
-            imageData.data[index+0] = 0;
-            imageData.data[index+1] = 0;
-            imageData.data[index+2] = 0;
-            imageData.data[index+3] = 128*(pos0.y+sizeH+shadowSize-k)/shadowSize;
-          } else {
-            imageData.data[index+0] = Math.round(imageData.data[index+0]*(0.5+(k-pos0.y-sizeH)/(2.0*shadowSize)));
-            imageData.data[index+1] = Math.round(imageData.data[index+1]*(0.5+(k-pos0.y-sizeH)/(2.0*shadowSize)));
-            imageData.data[index+2] = Math.round(imageData.data[index+2]*(0.5+(k-pos0.y-sizeH)/(2.0*shadowSize)));
-            imageData.data[index+3] = col.a;
-          }
-        }
-    }
-
-
-    for (var j=day0+1; j<=team.lastRankedDay; j++) {
-      var posprev = this.layout(team, lastrank);
-      if (this.getColorFor ) prevColor = this.getColorFor(team, j);
-      if (typeof(team.ranks[j])=='undefined'){
-
-        if (this.missingDataStrategy==canvastag.CONTINUE || j>team.lastRankedDay)
-          {continue;}
-        else if (this.missingDataStrategy==canvastag.DASHED_LINE){
-          while(typeof(team.ranks[j]) =='undefined'&& j<=team.lastRankedDay) j++;
-          var posf = this.layout(team, j);
-          //console.log("blah "+posprev.x+"-"+posf.x);
-          for (var i=posprev.x+Math.round(size); i<posf.x; i++){
-            if ((i+1)%size<size/2) continue;
-            var y = posprev.y+(posf.y-posprev.y)*(i-posprev.x)/(posf.x-posprev.x);
-            for (var k=Math.max(0, Math.round(y+sizeH/4)); k<Math.min(this.height, y+3*sizeH/4); k++){
-              var index = 4*(k+i*this.height);
-              var dl = 96*Math.abs(k-y-sizeH/3)/(sizeH);
-              imageData.data[index+0] = Math.round(col.r-dl);
-              imageData.data[index+1] = Math.round(col.g-dl);
-              imageData.data[index+2] = Math.round(col.b-dl);
-              imageData.data[index+3] = col.a;
-            }
-            if (shadowSize && shadowSize>0)
-              for (var k=Math.max(0, Math.ceil(y+3*sizeH/4)); k<Math.min(this.height,y+3*sizeH/4+shadowSize); k++){
-                var index = 4*(k+i*this.height);
-                if (imageData.data[index+3]==0) {
-                  imageData.data[index+0] = 0;
-                  imageData.data[index+1] = 0;
-                  imageData.data[index+2] = 0;
-                  imageData.data[index+3] = 128*(y+3*sizeH/4+shadowSize-k)/shadowSize;
-                } else {
-                  var l = (0.5+(k-y-3*sizeH/4)/(2.0*shadowSize));
-                  imageData.data[index+0] = Math.round(imageData.data[index+0]*l);
-                  imageData.data[index+1] = Math.round(imageData.data[index+1]*l);
-                  imageData.data[index+2] = Math.round(imageData.data[index+2]*l);
-                  imageData.data[index+3] = col.a;
-                }
-              }
-          }
-          //posprev = pos;
-          //continue;
-        } else{
-          pos= {x:this.width*(this.START_SLOT+j)/(this.DAY_NUMBER+this.ADD_SLOT), y:this.height};
-        }
-      } else
-        pos = this.layout(team, j);
-
-      var linkSize0 = this.linkSize;
-      var col = new RGBColor(prevColor);
-
-      for (var i=posprev.x; i<posprev.x+size; i++){
-        for (var k=Math.max(0, posprev.y); k<Math.min(this.height, posprev.y+sizeH); k++){
-          var index = 4*(k+i*this.height);
-          var dl = 96*Math.abs(k-posprev.y-sizeH/3)/(sizeH);
-          imageData.data[index+0] = Math.round(col.r-dl);
-          imageData.data[index+1] = Math.round(col.g-dl);
-          imageData.data[index+2] = Math.round(col.b-dl);
-          imageData.data[index+3] = col.a;
-        }
-        if (shadowSize && shadowSize>0)
-          for (var k=Math.max(0, Math.ceil(posprev.y+sizeH)); k<Math.min(this.height, posprev.y+sizeH+shadowSize); k++){
-            var index = 4*(k+i*this.height);
-            if (imageData.data[index+3]==0) {
-              imageData.data[index+0] = 0;
-              imageData.data[index+1] = 0;
-              imageData.data[index+2] = 0;
-              imageData.data[index+3] = 128*(posprev.y+sizeH+shadowSize-k)/shadowSize;
-            } else {
-              var l = (0.5+(k-posprev.y-sizeH)/(2.0*shadowSize));
-              imageData.data[index+0] = Math.round(imageData.data[index+0]*l);
-              imageData.data[index+1] = Math.round(imageData.data[index+1]*l);
-              imageData.data[index+2] = Math.round(imageData.data[index+2]*l);
-              imageData.data[index+3] = col.a;
-            }
-          }
-      }
-
-      for (var i=Math.ceil(posprev.x+size); i<pos.x; i++){
-        var f0 = (i-Math.ceil(posprev.x+size))/(pos.x-1-Math.ceil(posprev.x+size));
-        var f  = f0*Math.PI - Math.PI/2;
-        var sf = ((Math.sin(Math.sin(f)*Math.PI/2)+1)/2)*this.sShape + f0*(1-0-this.sShape);
-        var ya = pos.y*sf+posprev.y*(1.0-sf);
-        var yb = Math.round(ya);
-        var dy = (sizeH-sizeH*this.linkSize)/2;
-
-        for (var k=Math.max(0, Math.round(yb+dy)); k<Math.min(this.height, yb+sizeH-dy); k++){
-          var index = 4*(k+i*this.height);
-          var dl = 96*Math.abs(k-yb-dy-(sizeH-2*dy)/3)/(sizeH-2*dy);
-          imageData.data[index+0] = Math.round(col.r-dl);
-          imageData.data[index+1] = Math.round(col.g-dl);
-          imageData.data[index+2] = Math.round(col.b-dl);
-          imageData.data[index+3] = col.a;
-        }
-        if (shadowSize && shadowSize>0)
-          for (var k=Math.max(0, Math.ceil(yb+sizeH-dy)); k<Math.min(this.height, yb+sizeH-dy+shadowSize); k++){
-            var index = 4*(k+i*this.height);
-            if (imageData.data[index+3]<255) {
-              imageData.data[index+0] = 0;
-              imageData.data[index+1] = 0;
-              imageData.data[index+2] = 0;
-              imageData.data[index+3] = 128*(ya+sizeH-dy+shadowSize-k)/shadowSize;
-            }else {
-              var l = (0.5+(k-(ya+sizeH-dy))/(2.0*shadowSize));
-              imageData.data[index+0] = Math.round(imageData.data[index+0]*l);
-              imageData.data[index+1] = Math.round(imageData.data[index+1]*l);
-              imageData.data[index+2] = Math.round(imageData.data[index+2]*l);
-              imageData.data[index+3] = col.a;
-            }
-          }
-      }
-
-      lastrank = j;
-    }
-
-    prevColor = this.getColorFor(team, team.lastRankedDay);
-    var col = new RGBColor(prevColor);
-    var pos0 = this.layout(team, team.lastRankedDay);
-    var x0 = Math.round(pos0.x+this.width*(this.ADD_SLOT-this.START_SLOT+1)/(this.DAY_NUMBER+this.ADD_SLOT));
-
-    for (var i=pos0.x; i<x0+size; i++){
-      for (var k=Math.max(0, pos0.y); k<Math.min(this.height, pos0.y+sizeH); k++){
-        var index = 4*(k+i*this.height);
-        imageData.data[index+0] = Math.round(col.r-96*Math.abs(k-pos0.y-sizeH/3)/(sizeH));
-        imageData.data[index+1] = Math.round(col.g-96*Math.abs(k-pos0.y-sizeH/3)/(sizeH));
-        imageData.data[index+2] = Math.round(col.b-96*Math.abs(k-pos0.y-sizeH/3)/(sizeH));
-        imageData.data[index+3] = col.a;
-      }
-      if (shadowSize && shadowSize>0)
-        for (var k=Math.max(0, Math.ceil(pos0.y+sizeH)); k<Math.min(this.height, pos0.y+sizeH+shadowSize); k++){
-          var index = 4*(k+i*this.height);
-          if (imageData.data[index+3]==0) {
-            imageData.data[index+0] = 0;
-            imageData.data[index+1] = 0;
-            imageData.data[index+2] = 0;
-            imageData.data[index+3] = 128*(pos0.y+sizeH+shadowSize-k)/shadowSize;
-          } else {
-            imageData.data[index+0] = Math.round(imageData.data[index+0]*(0.5+(k-pos0.y-sizeH)/(2.0*shadowSize)));
-            imageData.data[index+1] = Math.round(imageData.data[index+1]*(0.5+(k-pos0.y-sizeH)/(2.0*shadowSize)));
-            imageData.data[index+2] = Math.round(imageData.data[index+2]*(0.5+(k-pos0.y-sizeH)/(2.0*shadowSize)));
-            imageData.data[index+3] = col.a;
-          }
-        }
-    }
-
-    //console.log("drawOneTeam3 "+this.id+" took "+(new Date().getTime()-timeNow)+" ms   ");
-  }
-
 
     // function to draw one single polygon using the 1px wide image method
   canvastag.drawOneTeam3a = function(team, ctx, size, sizeA, sizeH, sizeB, shadow, border){
@@ -18524,218 +18333,6 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
     //console.log("drawOneTeam3 "+this.id+" took "+(new Date().getTime()-timeNow)+" ms   ");
   }
 
-  // helper function to transform the snake into 3d object .. for 3d printers !
-  canvastag.drawOneTeamSTL = function(team){
-    //console.log("drawOneTeam3a "+team.name+" "+team.lastRankedDay);
-    var res = "solid "+team.name+"\n";
-
-    var sizeA =  this.width/(this.DAY_NUMBER+this.ADD_SLOT)*this.sShape;
-    var size  =  this.width/(this.DAY_NUMBER+this.ADD_SLOT)*this.boxWidth;
-    var sizeH = this.height/(2*this.RANKED_NUMBER)*2*this.boxHeight;
-    var sizeB = Math.max(0, Math.min(sizeA, sizeA-size));
-
-    var day0 = 0;
-    while ((typeof(team.ranks[day0])=='undefined') && day0<this.DAY_NUMBER) day0++;
-
-    var lastrank=day0;
-    var segCount=0;
-
-    // from left to right, the top of the shape
-    var daystart = day0;
-
-    //var col = new RGBColor(prevColor);
-    var pos0 = this.layout(team, day0);
-    var x0   = Math.round(pos0.x-this.width*(this.START_SLOT)/(this.DAY_NUMBER+this.ADD_SLOT));
-
-
-    for (var j=day0; j<=team.lastRankedDay; j++) {
-      if (j>day0)
-        var posprev = this.layout(team, lastrank);
-
-      if (j>team.lastRankedDay || typeof(team.ranks[j])=='undefined')
-        continue;
-
-      pos = this.layout(team, j);
-
-      var linkSize0 = this.linkSize;
-
-      //flat under
-      res+="facet normal 0 0 -1 \n";
-      res+=" outer loop\n";
-      res+="  vertex "+(pos.x)+" "+(pos.y-sizeH/2)+" "+(0)+"\n";
-      res+="  vertex "+(pos.x)+" "+(pos.y+sizeH/2)+" "+(0)+"\n";
-      res+="  vertex "+(pos.x+size)+" "+(pos.y+sizeH/2)+" "+(0)+"\n";
-      res+=" endloop\n";
-      res+="endfacet\n";
-
-      res+="facet normal 0 0 -1 \n";
-      res+=" outer loop\n";
-      res+="  vertex "+(pos.x)+" "+(pos.y-sizeH/2)+" "+(0)+"\n";
-      res+="  vertex "+(pos.x+size)+" "+(pos.y-sizeH/2)+" "+(0)+"\n";
-      res+="  vertex "+(pos.x+size)+" "+(pos.y+sizeH/2)+" "+(0)+"\n";
-      res+=" endloop\n";
-      res+="endfacet\n";
-
-      // half cylinder above
-      for (var i=-1; i<1; i+=0.1) {
-        var ratio0 = Math.sin(Math.acos(i+0.0));
-        var ratio1 = Math.sin(Math.acos(i+0.1));
-        if (i==-1 || i>0.99){ratio0=0; ratio1=0;}
-        res+="facet normal 0 "+Math.cos(i*Math.PI)+" "+Math.sin(i*Math.PI)+" \n";
-        res+=" outer loop\n";
-        res+="  vertex "+(pos.x)+" "+     (pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-        res+="  vertex "+(pos.x)+" "+     (pos.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-        res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-        res+=" endloop\n";
-        res+="endfacet\n";
-
-        res+="facet normal 0 "+Math.cos(i*Math.PI)+" "+Math.sin(i*Math.PI)+" \n";
-        res+=" outer loop\n";
-        res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-        res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-        res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-        res+=" endloop\n";
-        res+="endfacet\n";
-
-        // close the shape
-        if (j==day0){
-          res+="facet normal 0 -1 0 \n";
-          res+=" outer loop\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(0)+"\n";
-          res+=" endloop\n";
-          res+="endfacet\n";
-
-          res+="facet normal 0 -1 0 \n";
-          res+=" outer loop\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(0)+"\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(0)+"\n";
-          res+=" endloop\n";
-          res+="endfacet\n";
-        } else if (j==team.lastRankedDay){
-          res+="facet normal 0 1 0 \n";
-          res+=" outer loop\n";
-          res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-          res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(0)+"\n";
-          res+=" endloop\n";
-          res+="endfacet\n";
-
-          res+="facet normal 0 1 0 \n";
-          res+=" outer loop\n";
-          res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(0)+"\n";
-          res+="  vertex "+(pos.x+size)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(0)+"\n";
-          res+=" endloop\n";
-          res+="endfacet\n";
-        }
-      }
-
-      //transition
-      if (j>day0){
-        res+="facet normal 0 0 -1 \n";
-        res+=" outer loop\n";
-        res+="  vertex "+(pos.x)+" "+(pos.y-sizeH/2)+" "+(0)+"\n";
-        res+="  vertex "+(pos.x)+" "+(pos.y+sizeH/2)+" "+(0)+"\n";
-        res+="  vertex "+(posprev.x+size)+" "+(posprev.y+sizeH/2)+" "+(0)+"\n";
-        res+=" endloop\n";
-        res+="endfacet\n";
-
-        res+="facet normal 0 0 -1 \n";
-        res+=" outer loop\n";
-        res+="  vertex "+(pos.x)+" "+(pos.y-sizeH/2)+" "+(0)+"\n";
-        res+="  vertex "+(posprev.x+size)+" "+(posprev.y-sizeH/2)+" "+(0)+"\n";
-        res+="  vertex "+(posprev.x+size)+" "+(posprev.y+sizeH/2)+" "+(0)+"\n";
-        res+=" endloop\n";
-        res+="endfacet\n";
-
-        for (var i=-1; i<1; i+=0.1) {
-          var ratio0 = Math.sin(Math.acos(i+0.0));
-          var ratio1 = Math.sin(Math.acos(i+0.1));
-          if (i==-1 || i>0.99){ratio0=0; ratio1=0;}
-          res+="facet normal 0 "+Math.cos(i*Math.PI)+" "+Math.sin(i*Math.PI)+" \n";
-          res+=" outer loop\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-          res+="  vertex "+(posprev.x+size)+" "+(posprev.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-          res+=" endloop\n";
-          res+="endfacet\n";
-
-          res+="facet normal 0 "+Math.cos(i*Math.PI)+" "+Math.sin(i*Math.PI)+" \n";
-          res+=" outer loop\n";
-          res+="  vertex "+(pos.x)+" "+(pos.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+="  vertex "+(posprev.x+size)+" "+(posprev.y+(i+0.1)*sizeH/2)+" "+(sizeH/2*ratio1)+"\n";
-          res+="  vertex "+(posprev.x+size)+" "+(posprev.y+(i+0.0)*sizeH/2)+" "+(sizeH/2*ratio0)+"\n";
-          res+=" endloop\n";
-          res+="endfacet\n";
-        }
-      }
-
-      lastrank = j;
-    }
-
-    return res;
-  }
-
-
-  // helper function to transform the snake into 3d object .. for 3d printers !
-  canvastag.drawOneTeamSVG = function(team){
-    //console.log("drawOneTeam3a "+team.name+" "+team.lastRankedDay);
-    var res = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
-
-    var sizeA =  this.width/(this.DAY_NUMBER+this.ADD_SLOT)*this.sShape;
-    var size  =  this.width/(this.DAY_NUMBER+this.ADD_SLOT)*this.boxWidth;
-    var sizeH = this.height/(2*this.RANKED_NUMBER)*2*this.boxHeight;
-    var sizeB = Math.max(0, Math.min(sizeA, sizeA-size));
-
-    var day0 = 0;
-    while ((typeof(team.ranks[day0])=='undefined') && day0<this.DAY_NUMBER) day0++;
-
-    var lastrank=day0;
-    var segCount=0;
-
-    // from left to right, the top of the shape
-    var daystart = day0;
-
-    //var col = new RGBColor(prevColor);
-    var pos0 = this.layout(team, day0);
-    var x0   = Math.round(pos0.x-this.width*(this.START_SLOT)/(this.DAY_NUMBER+this.ADD_SLOT));
-
-
-    res +='<path d="M "'+(pos0.x-this.width*(this.START_SLOT)/(this.DAY_NUMBER+this.ADD_SLOT))+' '+(pos.y)+' ';
-    res +='L '+(pos0.x+size)+' '+(pos.y)+' ';
-
-    for (var j=day0+1; j<=team.lastRankedDay; j++) {
-      var posprev = this.layout(team, lastrank);
-
-      if (j>team.lastRankedDay || typeof(team.ranks[j])=='undefined')
-        continue;
-
-      pos = this.layout(team, j);
-
-//      res += 'C '+(posprev.x+size+sizeB)+' '+ posprev.y+' '+(pos.x-sizeB)+' '+pos.y+' '+pos.x+' '+pos.y+' ');
-  //    res += 'L '+(pos.x+size)+' '+(pos.y)+' ';
-    }
-
-    //res += 'L '+(pos.x+size)+' '+(pos.y+sizeH)+' ';
-    //res += 'L '+(pos.x)+' '+(pos.y+sizeH)+' ';
-
-    for (var j=team.lastRankedDay; j>day0; j--) {
-      var posprev = this.layout(team, j-1);
-      pos = this.layout(team, j);
-
-    }
-
-
-    //console.log("xxxx "+this.id+" took "+(new Date().getTime()-timeNow)+" ms   ");
-      res+="</svg>\n";
-
-    return res;
-  }
-
-
   // function to tick lines for all snakes
   canvastag.drawTicks = function(ctx, size, sizeH){
     if (this.TICKING==0) return;
@@ -18898,34 +18495,12 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
           continue;
         } else {
           lx = Math.round(pos.x-dx);
-          /*if (this.inspector && this.inspector.day>=j-1 && this.inspector.day<=j+1 && this.rankToSlope<0.1){
-            // CRUTCH for rankchart
-            //if (team.name=="Strasbourg"&& this.name=='Annee 2013-2014') console.log("CRUTCH")
-            startname = j+2;
-            letter = 0;dx=0;
-            if (this.inspector.day==j) ctx.fillText(team.pts[j], lx, pos.y+sizeH/2);
-              continue;
-          } else if (this.inspector && this.inspector.day>=j-1 && this.inspector.day<=j+1 && this.rankToSlope>0.9){
-            // CRUTCH for slopegraph
-            //if (team.name=="Strasbourg"&& this.name=='Annee 2013-2014') console.log("CRUTCH2")
-            startname = j+2;
-            letter = 0;dx=0;
-            var minRank = team.ranks[j];
-            while (minRank>0 && this.dayList[j].ranking[minRank-1].pts==this.dayList[j].ranking[minRank].pts) minRank--;
-            var maxRank = team.ranks[j];
-            while (maxRank<this.dayList[j].length-1 && this.dayList[j].ranking[maxRank+1].pts==this.dayList[j].ranking[maxRank].pts) maxRank++;
-
-            if (this.inspector.day==j && minRank==maxRank) ctx.fillText(minRank+1, lx, pos.y+sizeH/2);
-            else if (this.inspector.day==j && minRank!=maxRank) ctx.fillText((minRank+1)+"-"+(maxRank+1), lx, pos.y+sizeH/2);
-            continue;
-          } else*/ if (startname>j || typeof(team.ranks[j+1])=='undefined') {
+          if (startname>j || typeof(team.ranks[j+1])=='undefined') {
             // no need to draw the label now. we'll do it later when j reaches startname
             continue;
           } else if (team.scaling[j]<1||(letter==0 && (!team.games || !team.games[j] || !team.games[j].msg) && Math.abs(pos2.y-pos.y)/Math.abs(pos2.x-pos.x-size)>1)) {
             startname = j+1;
             if (startname>team.lastRankedDay-2*skipper) startname = team.lastRankedDay-1;
-            //if (team.name=="Strasbourg" && this.name=='Annee 2013-2014') console.log("STOP2 AT "+j+" will try again at "+startname);
-
             letter = 0;
             dx=0;
             continue;
@@ -18942,10 +18517,6 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
             if (startname>team.lastRankedDay-2*skipper) startname = team.lastRankedDay-1;
             dx=0;
             lx = Math.round(pos2.x);
-
-            //lx=sizeStep/4;
-            //if (team.name=="Strasbourg" && this.name=='Annee 2013-2014') console.log("STOP AT "+j+" will try again at "+startname);
-            //letter = team.name.length;
             letter= 0;
             break;
           }
@@ -18957,13 +18528,6 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
           }
           if (x>pos2.x)
             y=pos2.y;
-
-          /*if (team.name=="Strasbourg" && this.name=='Annee 2013-2014' && letter==0) {
-            console.log('  1rst letter at '+j+'/'+team.lastRankedDay);
-            // console.log(pos);
-            //console.log(pos2);
-            ctx.fillStyle = "rgb(0,128,0)";
-          } else*/
           if (this.getColorForText)
           if (typeof(this.getColorForText)=='function') ctx.fillStyle = this.getColorForText(team, j);
           else ctx.fillStyle = "rgb(0,0,0)";
@@ -18979,11 +18543,6 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
 
           startname = j+2*skipper;
           if (startname>team.lastRankedDay-2*skipper) startname = team.lastRankedDay-1;
-          //if (team.name=="Strasbourg" && this.name=='Annee 2013-2014') console.log("DONE AT "+j+" will try again at "+startname);
-          //if (totalWidth/sizeStep>2){
-            //console.log(team.name+" => "+Math.ceil(ctx.measureText(team.name).width/sizeStep));
-            //startname = j+2*Math.ceil(ctx.measureText(team.name).width/sizeStep);
-          //}
           letter = 0;
           dx=0;
         } else
@@ -19103,8 +18662,10 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
     ctx.font = '6px sans-serif';
     ctx.textBaseline = "top";
     ctx.textAlign = "start";
-    if (this.START_SLOT>0)
+    if (this.START_SLOT>0 && this.DECORATE_RANK_ON_LEFT){
+		//console.log(team.ranks[team.firstRankedDay]+1)
       ctx.fillText(team.ranks[team.firstRankedDay]+1, pos0.x-this.width*(this.START_SLOT)/(this.DAY_NUMBER+this.ADD_SLOT)+4, pos0.y-1);
+	}
     ctx.textBaseline = "middle";
     ctx.textAlign = "start";
     ctx.font = Math.max(10, Math.round(sizeH*0.75))+'px sans-serif';
@@ -19270,104 +18831,6 @@ function registerGapChart(canvastag, gameList, dayList, teamList, teamShorts, so
 
     //console.log("checkOneTeam "+this.id+" took "+(new Date().getTime()-timeNow)+" ms   ");
     return {inspector:inspector, mouseHover:mousein}
-  }
-
-
-  // function to draw one single polygon with a set of prefedined images
-  canvastag.drawOneTeam2 = function(team, ctx, size, sizeA, sizeH, sizeB, colBorder){
-    //var timeNow2 = new Date().getTime();
-
-    var tn = Math.ceil(team.name.length/4)*4+1;
-
-    var day0 = 0;
-    while ((typeof(team.ranks[day0])=='undefined') && day0<this.DAY_NUMBER) day0++;
-
-    for (var j=day0+1; j<this.DAY_NUMBER; j++)
-      if (typeof(team.ranks[j])!='undefined') lastrank=j;
-
-    var mousein = false;
-    var segCount=0;
-
-    // from left to right, the top of the shape
-    var daystart = day0;
-    prevColor = "#888";
-    ctx.fillStyle = prevColor;
-
-    for (var j=day0+1; j<=team.lastRankedDay; j++) {
-      var posprev = this.layout(team, lastrank);
-      if (this.getColorFor ) prevColor = this.getColorFor(team, j);
-      if (typeof(team.ranks[j])=='undefined'){
-        if (this.missingDataStrategy==canvastag.CONTINUE || j>team.lastRankedDay)
-          {}
-        else {
-          pos= {x:this.width*(this.START_SLOT+j)/(this.DAY_NUMBER+this.ADD_SLOT), y:this.height};
-        }
-      } else
-        pos = this.layout(team, j);
-
-      var linkSize0 = this.linkSize;
-
-      if (pos.y-posprev.y<=128 && pos.y-posprev.y>0){
-        var dy= Math.round(pos.y-posprev.y);
-        ctx.save();
-        ctx.translate(posprev.y-2, posprev.x+size);
-
-        var ctx2 = this.imageColorSet[dy].getContext('2d');
-        ctx2.fillStyle=prevColor;
-        ctx2.fillRect(0, 0, this.imageColorSet[dy].width, this.imageColorSet[dy].height);
-        ctx2.globalCompositeOperation = "destination-atop";
-        ctx2.drawImage(this.imageSet[dy], 0, 0);
-        ctx2.globalCompositeOperation = "source-over";
-
-        ctx.drawImage(this.imageSet[dy], 0, 0);
-        ctx.globalAlpha = 0.5;
-        ctx.drawImage(this.imageColorSet[dy], 0, 0);
-        ctx.globalAlpha = 1.0;
-        ctx.restore();
-      } else if (posprev.y-pos.y<=128 && posprev.y-pos.y>=0){
-        var dy= Math.round(posprev.y-pos.y);
-        ctx.save();
-        ctx.translate(Math.round(pos.y-2), Math.round(pos.x));
-        ctx.scale(1, -1);
-
-        var ctx2 = this.imageColorSet[dy].getContext('2d');
-        ctx2.fillStyle=prevColor;
-        ctx2.fillRect(0, 0, this.imageColorSet[dy].width, this.imageColorSet[dy].height);
-        ctx2.globalCompositeOperation = "destination-atop";
-        ctx2.drawImage(this.imageSet[dy], 0, 0);
-        ctx2.globalCompositeOperation = "source-over";
-
-        ctx.drawImage(this.imageSet[dy], 0, 0);
-        ctx.globalAlpha = 0.5;
-        ctx.drawImage(this.imageColorSet[dy], 0, 0);
-        ctx.globalAlpha = 1.0;
-
-        ctx.restore();
-      }
-
-      if (size>0) {
-        ctx.save();
-        ctx.translate(pos.y-2, pos.x-1);
-        var ctx2 = this.imageColorSet[129].getContext('2d');
-        ctx2.fillStyle=prevColor;
-        ctx2.fillRect(0, 0, this.imageColorSet[129].width, this.imageColorSet[129].height);
-        ctx2.globalCompositeOperation = "destination-atop";
-        ctx2.drawImage(this.imageSet[129], 0, 0);
-        ctx2.globalCompositeOperation = "source-over";
-        ctx.drawImage(this.imageSet[129], 0, 0);
-        ctx.globalAlpha = 0.5;
-        ctx.drawImage(this.imageColorSet[129], 0, 0);
-        ctx.globalAlpha = 1.0;
-        ctx.restore();
-      }
-      lastrank = j;
-    }
-
-    var posn = this.layout(team, lastrank);
-    ctx.strokeStyle = '#000';
-    ctx.lineWidth = 1;
-
-    //console.log("drawOneTeam2 "+this.id+" took "+(new Date().getTime()-timeNow2)+" ms   ");
   }
 
 
