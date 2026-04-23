@@ -2931,6 +2931,29 @@
 		box-sizing: border-box;
 	}
 	
+	.pub-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
+		margin: 0 1em 0.25em 0;
+		font-size: 1em;
+	}
+	
+	.pub-icon img{
+		height: 30px;
+		width: auto;
+	}
+	
+	.pub-icon span {
+		max-width: 120px;
+		display: inline-block;
+		line-height: 0.95;
+	}
+	
+	#pub-icons {
+		margin-top: 2em;
+	}
+	
 	.pub-id{
 		padding: 0 0;
 	}
@@ -2960,6 +2983,22 @@
 			background: white;
 			border-color: #333;
 			color: #333;
+		}
+		
+		.pub-type.magazine, 
+		.button.pub-legend.magazine,
+		.button.pub-legend.magazine:hover{
+			background: #666;
+			border-color: #666;
+			color: white;
+		}
+		
+		.pub-type.magazine.disabled, 
+		.button.pub-legend.magazine.disabled,
+		.button.pub-legend.magazine.disabled:hover{
+			background: white;
+			border-color: #666;
+			color: #666;
 		}
 		
 		.pub-type.fullconf, 
@@ -3058,7 +3097,22 @@
 			color: #D89191;
 		}
 		
+				
+		.pub-type.techreport, 
+		.button.pub-legend.techreport,
+		.button.pub-legend.techreport:hover{
+			background: #AD4572;
+			border-color: #333;
+			color: white;
+		}
 		
+		.pub-type.techreport.disabled, 
+		.button.pub-legend.techreport.disabled,
+		.button.pub-legend.techreport.disabled:hover{
+			background: white;
+			border-color: #333;
+			color: #AD4572;
+		}
 		
 		
 		.pub-type.other, 
@@ -3106,7 +3160,6 @@
 			border-color: #333;
 			color: #EF759E;
 		}
-		
 		
 	
 	div.award{
