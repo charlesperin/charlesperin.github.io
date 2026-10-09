@@ -34,7 +34,7 @@ Local server at: http://127.0.0.1:4000/
 - delete \_site folder
 - compile with:
 > bundle exec jekyll serve watch --future
-- copy content of \_site/ repo to github local folder
+- copy content of \_site/ repo to github local folder (Documents/Github) -> replace all files in destination
 - push \_site/ content to github repo
 - uncomment the "demo" folder from the exclude list in \_config.yml
 
@@ -105,7 +105,9 @@ look at demo/dragvispub/index.html
 - add to the publication or project the property _featured: true_
 - Make sure it also has a "description_short: [short description]" property
 
-
+### Posting/removing a job offer/recruitment
+- in pages/students.md: include/comment out the html file with the offer content (default: current-offers.html)
+- _includes/current-offers.html contains current offer
 
 
 
